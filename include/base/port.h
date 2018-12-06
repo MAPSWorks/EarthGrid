@@ -378,7 +378,7 @@ static inline uint64 bswap_64(uint64 x) {
 
 #ifdef __cplusplus
 #ifdef STL_MSVC  // not always the same as _MSC_VER
-#include "third_party/absl/base/internal/port_hash.inc"
+#include "s2/third_party/absl/base/internal/port_hash.inc"
 #else
 struct PortableHashBase {};
 #endif  // STL_MSVC
@@ -878,17 +878,17 @@ inline void *aligned_malloc(size_t size, int minimum_alignment) {
 #if defined(__ANDROID__) || defined(OS_ANDROID) || defined(__ASYLO__)
   return memalign(minimum_alignment, size);
 #else  // !__ANDROID__ && !OS_ANDROID && !__ASYLO__
-  void *ptr = nullptr;
-  // posix_memalign requires that the requested alignment be at least
-  // sizeof(void*). In this case, fall back on malloc which should return memory
-  // aligned to at least the size of a pointer.
-  const int required_alignment = sizeof(void*);
-  if (minimum_alignment < required_alignment)
-    return malloc(size);
-  if (posix_memalign(&ptr, static_cast<size_t>(minimum_alignment), size) != 0)
-    return nullptr;
-  else
-    return ptr;
+ void *ptr = nullptr;
+//  // posix_memalign requires that the requested alignment be at least
+//  // sizeof(void*). In this case, fall back on malloc which should return memory
+//  // aligned to at least the size of a pointer.
+//  const int required_alignment = sizeof(void*);
+//  if (minimum_alignment < required_alignment)
+//    return malloc(size);
+//  if (posix_memalign(&ptr, static_cast<size_t>(minimum_alignment), size) != 0)
+//    return nullptr;
+//  else
+  return ptr;
 #endif
 }
 

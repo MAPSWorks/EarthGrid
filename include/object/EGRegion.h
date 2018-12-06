@@ -5,9 +5,18 @@
 #ifndef EARTHGRID_EGREGION_H
 #define EARTHGRID_EGREGION_H
 
+#include <vector>
+
+class EGSphereCap;
+class EGCell;
+class EGCellId;
+class EGLatLongRect;
+
 // An EGRegion represents a two-dimensional object over the unit sphere.
 // It is an abstract interface with various concrete subtypes.
-//
+// EGRegion是一个用于表球面二维对象的抽象类，定义了各种子类的基本接口。
+// 该接口的主要作用是将复杂的区域对象转换为更为简单的区域对象，因此仅封装了和估计有关的接口。
+// 其他接口的实现则交由子类去实现。
 // The main purpose of this interface is to allow complex regions to be
 // approximated as simpler regions.  So rather than having a wide variety
 // of virtual methods that are implemented by all subtypes, the interface
@@ -25,11 +34,13 @@ public:
 
     // Returns a bounding spherical cap that contains the object.  The bound may
     // not be tight.
-    virtual EGCap GetCapBound() const = 0;
+    // 返回区域对象的球面外包球冠。
+    virtual EGSphereCap GetCapBound() const = 0;
 
     // Returns a bounding latitude-longitude rectangle that contains the object.
     // The bound may not be tight.
-    virtual EGLatLngRect GetRectBound() const = 0;
+    // 返回区域对象的经纬度外包矩形
+    virtual EGLatLongRect GetRectBound() const = 0;
 
     // Returns a small collection of EGCellIds whose union covers the object.
     // The cells are not sorted, may have redundancies (such as cells that
@@ -48,6 +59,7 @@ public:
     // point for further refinement.
     //
     // TODO(ericv): Remove the default implementation.
+    // 返回区域对象的最小外包格元列表（4个或者更少）
     virtual void GetCellUnionBound(std::vector<EGCellId> *cell_ids) const;
 
     // Returns true if the object completely contains the given cell, otherwise

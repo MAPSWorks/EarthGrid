@@ -81,13 +81,13 @@ class BasicVector {
   void Clear() { AsD() = D(); }
 
   T& operator[](int b) {
-    S2_DCHECK_GE(b, 0);
-    S2_DCHECK_LT(b, SIZE);
+    EG_DCHECK_GE(b, 0);
+    EG_DCHECK_LT(b, SIZE);
     return static_cast<D&>(*this).Data()[b];
   }
   T operator[](int b) const {
-    S2_DCHECK_GE(b, 0);
-    S2_DCHECK_LT(b, SIZE);
+    EG_DCHECK_GE(b, 0);
+    EG_DCHECK_LT(b, SIZE);
     return static_cast<const D&>(*this).Data()[b];
   }
 
