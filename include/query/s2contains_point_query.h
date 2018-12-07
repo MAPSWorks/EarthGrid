@@ -21,7 +21,7 @@
 #include <vector>
 
 #include "core/s2edge_crosser.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 #include "shape/s2shapeutil_shape_edge.h"
 
 // Defines whether shapes are considered to contain their vertices.  Note that

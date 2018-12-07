@@ -20,7 +20,7 @@
 
 #include "object/s2cap.h"
 #include "object/s2cell.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 
 // S2DistanceTarget represents a geometric object to which distances are
 // measured.  For example, there are subtypes for measuring distances to a

@@ -34,7 +34,7 @@
 #include "core/s2cell_id.h"
 #include "core/s2error.h"
 #include "index/s2point_index.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 #include "util/gtl/compact_array.h"
 
 class S2Loop;

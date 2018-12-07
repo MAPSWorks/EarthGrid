@@ -20,7 +20,7 @@
 #include "third_party/absl/memory/memory.h"
 #include "index/mutable_s2shape_index.h"
 #include "query/s2contains_point_query.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 #include "shape/s2shapeutil_contains_brute_force.h"
 #include "util/gtl/btree_map.h"
 

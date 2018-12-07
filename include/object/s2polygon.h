@@ -36,7 +36,7 @@
 #include "object/s2loop.h"
 #include "object/s2polyline.h"
 #include "object/s2region.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 
 class Decoder;
 class Encoder;

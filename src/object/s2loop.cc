@@ -50,7 +50,7 @@
 #include "core/s2point_compression.h"
 #include "core/s2pointutil.h"
 #include "core/s2predicates.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 #include "shape/s2shapeutil_visit_crossing_edge_pairs.h"
 #include "core/s2wedge_relations.h"
 #include "third_party/absl/memory/memory.h"

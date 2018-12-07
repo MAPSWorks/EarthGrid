@@ -20,7 +20,7 @@
 
 #include <functional>
 #include "query/s2crossing_edge_query.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 #include "shape/s2shapeutil_shape_edge.h"
 
 class S2Error;

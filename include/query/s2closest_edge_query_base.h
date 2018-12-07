@@ -32,7 +32,7 @@
 #include "object/s2cell_union.h"
 #include "query/s2distance_target.h"
 #include "object/s2region_coverer.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 #include "shape/s2shapeutil_count_edges.h"
 #include "shape/s2shapeutil_shape_edge_id.h"
 #include "util/gtl/btree_set.h"

@@ -26,7 +26,7 @@
 #include "core/s2edge_crosser.h"
 #include "object/s2latlng_rect.h"
 #include "object/s2region.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 
 // This class wraps an S2ShapeIndex object with the additional methods needed
 // to implement the S2Region API, in order to allow S2RegionCoverer to compute

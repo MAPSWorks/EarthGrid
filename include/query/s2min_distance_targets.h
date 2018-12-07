@@ -32,7 +32,7 @@
 #include "object/s2cell.h"
 #include "query/s2distance_target.h"
 #include "core/s2edge_distances.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 
 // Forward references because these classes depend on the types defined here.
 class S2ClosestCellQuery;

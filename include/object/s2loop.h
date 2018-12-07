@@ -36,7 +36,7 @@
 #include "core/s2loop_measures.h"
 #include "core/s2pointutil.h"
 #include "object/s2region.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 #include "third_party/absl/base/macros.h"
 #include "util/math/matrix3x3.h"
 #include "util/math/vector.h"

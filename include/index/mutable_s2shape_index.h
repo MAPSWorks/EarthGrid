@@ -34,7 +34,7 @@
 #include "core/s2cell_id.h"
 #include "core/s2pointutil.h"
 #include "shape/s2shape.h"
-#include "shape/s2shape_index.h"
+#include "s2shape_index.h"
 #include "third_party/absl/base/macros.h"
 #include "third_party/absl/base/thread_annotations.h"
 #include "third_party/absl/memory/memory.h"

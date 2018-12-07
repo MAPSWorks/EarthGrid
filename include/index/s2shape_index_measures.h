@@ -24,7 +24,7 @@
 
 #include "core/s1angle.h"
 #include "core/s2point.h"
-#include "shape/s2shape_index.h"
+#include "s2shape_index.h"
 
 namespace S2 {
 

@@ -19,7 +19,7 @@
 #define S2_S2SHAPEUTIL_CONTAINS_BRUTE_FORCE_H_
 
 #include "core/s2point.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 
 namespace s2shapeutil {
 

@@ -41,7 +41,7 @@
 #include "util/coding/coder.h"
 #include "encode/encoded_string_vector.h"
 #include "shape/s2shape.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 
 namespace s2shapeutil {
 

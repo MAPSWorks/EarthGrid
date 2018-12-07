@@ -27,7 +27,7 @@
 #include "core/r2.h"
 #include "core/r2rect.h"
 #include "core/s2padded_cell.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 #include "shape/s2shapeutil_shape_edge.h"
 #include "shape/s2shapeutil_shape_edge_id.h"
 

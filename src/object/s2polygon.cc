@@ -61,7 +61,7 @@
 #include "core/s2point_compression.h"
 #include "object/s2polyline.h"
 #include "core/s2predicates.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 #include "object/s2shape_index_region.h"
 #include "shape/s2shapeutil_visit_crossing_edge_pairs.h"
 #include "third_party/absl/container/fixed_array.h"

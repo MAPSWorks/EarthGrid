@@ -25,7 +25,7 @@
 #include "query/s2closest_edge_query.h"
 #include "object/s2latlng_rect.h"
 #include "object/s2region.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 
 // This class provides a way to expand an arbitrary collection of geometry by
 // a fixed radius (an operation variously known as "buffering", "offsetting",

@@ -19,7 +19,7 @@
 #define S2_S2SHAPEUTIL_RANGE_ITERATOR_H_
 
 #include "core/s2cell_id.h"
-#include "shape/s2shape_index.h"
+#include "index/s2shape_index.h"
 
 class S2Loop;
 class S2Error;
