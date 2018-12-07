@@ -5,8 +5,9 @@
 #ifndef EARTHGRID_EGLOOP_H
 #define EARTHGRID_EGLOOP_H
 
+#include "object/EGRegion.h"
 
-class EGLoop final : public S2Region {
+class EGLoop final : public EGRegion {
 
 };
 

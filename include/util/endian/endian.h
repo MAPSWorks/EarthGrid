@@ -21,8 +21,8 @@
 //
 // Buffer routines will copy to and from buffers without causing
 // a bus error when the architecture requires different byte alignments.
-#ifndef S2_UTIL_ENDIAN_ENDIAN_H_
-#define S2_UTIL_ENDIAN_ENDIAN_H_
+#ifndef EG_UTIL_ENDIAN_ENDIAN_H_
+#define EG_UTIL_ENDIAN_ENDIAN_H_
 
 #include <cassert>
 #include <type_traits>
@@ -603,7 +603,7 @@ GeneralFormatConverter<EndianClass, ValueType>::FromHost(ValueType v) {
       return EndianClass::FromHost64(static_cast<uint64>(v));
       break;
     default:
-      S2_LOG(FATAL) << "Unexpected value size: " << sizeof(ValueType);
+      EG_LOG(FATAL) << "Unexpected value size: " << sizeof(ValueType);
   }
 }
 
@@ -628,7 +628,7 @@ GeneralFormatConverter<EndianClass, ValueType>::ToHost(ValueType v) {
       return EndianClass::ToHost64(static_cast<uint64>(v));
       break;
     default:
-      S2_LOG(FATAL) << "Unexpected value size: " << sizeof(ValueType);
+      EG_LOG(FATAL) << "Unexpected value size: " << sizeof(ValueType);
   }
 }
 
@@ -694,7 +694,7 @@ inline T LoadInteger(const char* p) {
     case 4: return EndianClass::ToHost32(UNALIGNED_LOAD32(p));
     case 8: return EndianClass::ToHost64(UNALIGNED_LOAD64(p));
     default: {
-      S2_LOG(FATAL) << "Not reached!";
+      EG_LOG(FATAL) << "Not reached!";
       return 0;
     }
   }
@@ -712,7 +712,7 @@ inline void StoreInteger(T value, char* p) {
     case 4: UNALIGNED_STORE32(p, EndianClass::FromHost32(value)); break;
     case 8: UNALIGNED_STORE64(p, EndianClass::FromHost64(value)); break;
     default: {
-      S2_LOG(FATAL) << "Not reached!";
+      EG_LOG(FATAL) << "Not reached!";
     }
   }
 }
@@ -855,4 +855,4 @@ inline void BigEndian::Store<absl::uint128>(absl::uint128 value, char* p) {
   BigEndian::Store128(p, value);
 }
 
-#endif  // S2_UTIL_ENDIAN_ENDIAN_H_
+#endif  // EG_UTIL_ENDIAN_ENDIAN_H_

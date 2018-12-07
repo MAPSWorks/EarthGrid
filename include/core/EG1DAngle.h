@@ -15,8 +15,8 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#ifndef S2_EG1DAngle_H_
-#define S2_EG1DAngle_H_
+#ifndef EG_EG1DAngle_H_
+#define EG_EG1DAngle_H_
 
 #include <cmath>
 #include <limits>
@@ -28,6 +28,7 @@
 #include "EGPoint.h"
 #include "util/math/mathutil.h"
 #include "util/math/vector.h"
+#include "base/def.h"
 
 class EGLatLng;
 
@@ -331,4 +332,4 @@ std::ostream& operator<<(std::ostream& os, EG1DAngle a);
 
 #undef IFNDEF_SWIG
 
-#endif  // S2_EG1DAngle_H_
+#endif  // EG_EG1DAngle_H_

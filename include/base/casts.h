@@ -22,15 +22,15 @@
 // any changes here, make sure that you're not breaking any platforms.
 //
 
-#ifndef S2_BASE_CASTS_H_
-#define S2_BASE_CASTS_H_
+#ifndef EG_BASE_CASTS_H_
+#define EG_BASE_CASTS_H_
 
 #include <cassert>         // for use with down_cast<>
 #include <climits>         // for enumeration casts and tests
 #include <type_traits>
 
-#include "s2/third_party/absl/base/casts.h"
-#include "s2/third_party/absl/base/macros.h"
+#include "third_party/absl/base/casts.h"
+#include "third_party/absl/base/macros.h"
 
 // An "upcast", i.e. a conversion from a pointer to an object to a pointer to a
 // base subobject, always succeeds if the base is unambiguous and accessible,
@@ -315,4 +315,4 @@ inline Enum tight_enum_cast(int e_val) {
   return static_cast<Enum>(e_val);
 }
 
-#endif  // S2_BASE_CASTS_H_
+#endif  // EG_BASE_CASTS_H_

@@ -5,8 +5,9 @@
 #ifndef EARTHGRID_EGPOLYGON_H
 #define EARTHGRID_EGPOLYGON_H
 
+#include "object/EGRegion.h"
 
-class EGPolygon final : public S2Region  {
+class EGPolygon final : public EGRegion  {
 
 };
 

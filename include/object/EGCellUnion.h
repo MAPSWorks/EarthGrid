@@ -5,8 +5,9 @@
 #ifndef EARTHGRID_EGCELLUNION_H
 #define EARTHGRID_EGCELLUNION_H
 
+#include "object/EGRegion.h"
 
-class EGCellUnion final : public S2Region {
+class EGCellUnion final : public EGRegion {
 
 };
 

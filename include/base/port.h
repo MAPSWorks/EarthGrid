@@ -13,15 +13,15 @@
 // limitations under the License.
 //
 
-#ifndef S2_BASE_PORT_H_
-#define S2_BASE_PORT_H_
+#ifndef EG_BASE_PORT_H_
+#define EG_BASE_PORT_H_
 
-// Users should still #include "base/port.h".  Code in //third_party/absl/base
+// Users should still #include "base/port.h".  Code in third_party/absl/base
 // is not visible for general use.
 //
 // This file contains things that are not used in third_party/absl but needed by
 // - Platform specific requirement
-//   - MSVC
+// - MSVC
 // - Utility macros
 // - Endianness
 // - Hash
@@ -378,7 +378,7 @@ static inline uint64 bswap_64(uint64 x) {
 
 #ifdef __cplusplus
 #ifdef STL_MSVC  // not always the same as _MSC_VER
-#include "s2/third_party/absl/base/internal/port_hash.inc"
+#include "third_party/absl/base/internal/port_hash.inc"
 #else
 struct PortableHashBase {};
 #endif  // STL_MSVC
@@ -1031,4 +1031,4 @@ extern inline void prefetch(const void *, int) {}
 #define STREAM_SETF(s, flag) (s).setf(std::ios::flag)
 #endif
 
-#endif  // S2_BASE_PORT_H_
+#endif  // EG_BASE_PORT_H_

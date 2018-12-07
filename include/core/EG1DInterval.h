@@ -15,13 +15,14 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#ifndef S2_EG1DInterval_H_
-#define S2_EG1DInterval_H_
+#ifndef EG_EG1DInterval_H_
+#define EG_EG1DInterval_H_
 
 #include <cmath>
 #include <iosfwd>
 #include <iostream>
 
+#include "base/def.h"
 #include "base/logging.h"
 #include "_fp_contract_off.h"
 #include "util/math/vector.h"  // IWYU pragma: export
@@ -263,4 +264,4 @@ inline std::ostream& operator<<(std::ostream& os, const EG1DInterval& x) {
   return os << "[" << x.lo() << ", " << x.hi() << "]";
 }
 
-#endif  // S2_EG1DInterval_H_
+#endif  // EG_EG1DInterval_H_

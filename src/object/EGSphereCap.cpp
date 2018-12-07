@@ -2,12 +2,14 @@
 // Created by pgl on 2018/12/6.
 //
 
-#include "object/EGSphereCap.h"
+
 
 #include <cfloat>
 #include <cmath>
 #include <iosfwd>
 #include <vector>
+
+#include "object/EGSphereCap.h"
 
 using std::fabs;
 using std::max;
@@ -36,23 +38,23 @@ EGSphereCap EGSphereCap::Complement() const {
     // Also make sure that the complement of an empty cap is full.
     if (is_full()) return Empty();
     if (is_empty()) return Full();
-    return EGSphereCap(-center_, S1ChordAngle::FromLength2(4 - radius_.length2()));
+    return EGSphereCap(-center_, EG1DChordAngle::FromLength2(4 - radius_.length2()));
 }
 
 bool EGSphereCap::Contains(const EGSphereCap& other) const {
     if (is_full() || other.is_empty()) return true;
-    return radius_ >= S1ChordAngle(center_, other.center_) + other.radius_;
+    return radius_ >= EG1DChordAngle(center_, other.center_) + other.radius_;
 }
 
 bool EGSphereCap::Intersects(const EGSphereCap& other) const {
     if (is_empty() || other.is_empty()) return false;
-    return radius_ + other.radius_ >= S1ChordAngle(center_, other.center_);
+    return radius_ + other.radius_ >= EG1DChordAngle(center_, other.center_);
 }
 
 bool EGSphereCap::InteriorIntersects(const EGSphereCap& other) const {
     // Make sure this cap has an interior and the other cap is non-empty.
     if (radius_.length2() <= 0 || other.is_empty()) return false;
-    return radius_ + other.radius_ > S1ChordAngle(center_, other.center_);
+    return radius_ + other.radius_ > EG1DChordAngle(center_, other.center_);
 }
 
 void EGSphereCap::AddPoint(const EGPoint& p) {
@@ -60,12 +62,12 @@ void EGSphereCap::AddPoint(const EGPoint& p) {
     EG_DCHECK(EG::IsUnitLength(p));
     if (is_empty()) {
         center_ = p;
-        radius_ = S1ChordAngle::Zero();
+        radius_ = EG1DChordAngle::Zero();
     } else {
         // After calling cap.AddPoint(p), cap.Contains(p) must be true.  However
         // we don't need to do anything special to achieve this because Contains()
         // does exactly the same distance calculation that we do here.
-        radius_ = max(radius_, S1ChordAngle(center_, p));
+        radius_ = max(radius_, EG1DChordAngle(center_, p));
     }
 }
 
@@ -75,7 +77,7 @@ void EGSphereCap::AddCap(const EGSphereCap& other) {
     } else {
         // We round up the distance to ensure that the cap is actually contained.
         // TODO(ericv): Do some error analysis in order to guarantee this.
-        S1ChordAngle dist = S1ChordAngle(center_, other.center_) + other.radius_;
+        EG1DChordAngle dist = EG1DChordAngle(center_, other.center_) + other.radius_;
         radius_ = max(radius_, dist.PlusError(DBL_EPSILON * dist.length2()));
     }
 }
@@ -83,7 +85,7 @@ void EGSphereCap::AddCap(const EGSphereCap& other) {
 EGSphereCap EGSphereCap::Expanded(S1Angle distance) const {
     EG_DCHECK_GE(distance.radians(), 0);
     if (is_empty()) return Empty();
-    return EGSphereCap(center_, radius_ + S1ChordAngle(distance));
+    return EGSphereCap(center_, radius_ + EG1DChordAngle(distance));
 }
 
 EGSphereCap EGSphereCap::Union(const EGSphereCap& other) const {
@@ -93,7 +95,7 @@ EGSphereCap EGSphereCap::Union(const EGSphereCap& other) const {
     if (is_full() || other.is_empty()) {
         return *this;
     }
-    // This calculation would be more efficient using S1ChordAngles.
+    // This calculation would be more efficient using EG1DChordAngles.
     S1Angle this_radius = GetRadius();
     S1Angle other_radius = other.GetRadius();
     S1Angle distance(center(), other.center());
@@ -198,7 +200,7 @@ bool EGSphereCap::Intersects(const EGCell& cell, const EGPoint* vertices) const 
     // If the cap is a hemisphere or larger, the cell and the complement of the
     // cap are both convex.  Therefore since no vertex of the cell is contained,
     // no other interior point of the cell is contained either.
-    if (radius_ >= S1ChordAngle::Right()) return false;
+    if (radius_ >= EG1DChordAngle::Right()) return false;
 
     // We need to check for empty caps due to the center check just below.
     if (is_empty()) return false;
@@ -264,12 +266,12 @@ bool EGSphereCap::MayIntersect(const EGCell& cell) const {
 
 bool EGSphereCap::Contains(const EGPoint& p) const {
     EG_DCHECK(EG::IsUnitLength(p));
-    return S1ChordAngle(center_, p) <= radius_;
+    return EG1DChordAngle(center_, p) <= radius_;
 }
 
 bool EGSphereCap::InteriorContains(const EGPoint& p) const {
     EG_DCHECK(EG::IsUnitLength(p));
-    return is_full() || S1ChordAngle(center_, p) < radius_;
+    return is_full() || EG1DChordAngle(center_, p) < radius_;
 }
 
 bool EGSphereCap::operator==(const EGSphereCap& other) const {
@@ -313,7 +315,7 @@ bool EGSphereCap::Decode(Decoder* decoder) {
     double y = decoder->getdouble();
     double z = decoder->getdouble();
     center_ = EGPoint(x, y, z);
-    radius_ = S1ChordAngle::FromLength2(decoder->getdouble());
+    radius_ = EG1DChordAngle::FromLength2(decoder->getdouble());
 
     if (FLAGS_EGdebug) {
         EG_CHECK(is_valid()) << "Invalid EGSphereCap: " << *this;

@@ -17,8 +17,8 @@
 //
 // This holds the encoding/decoding routines that used to live in netutil
 
-#ifndef S2_UTIL_CODING_CODER_H_
-#define S2_UTIL_CODING_CODER_H_
+#ifndef EG_UTIL_CODING_CODER_H_
+#define EG_UTIL_CODING_CODER_H_
 
 #include <cstring>
 
@@ -232,20 +232,20 @@ inline void Encoder::clear() {
 }
 
 inline void Encoder::Ensure(size_t N) {
-  S2_DCHECK(ensure_allowed());
+  EG_DCHECK(ensure_allowed());
   if (avail() < N) {
     EnsureSlowPath(N);
   }
 }
 
 inline size_t Encoder::length() const {
-  S2_DCHECK_GE(buf_, orig_);
-  S2_CHECK_LE(buf_, limit_);  // Catch the buffer overflow.
+  EG_DCHECK_GE(buf_, orig_);
+  EG_CHECK_LE(buf_, limit_);  // Catch the buffer overflow.
   return buf_ - orig_;
 }
 
 inline size_t Encoder::avail() const {
-  S2_DCHECK_GE(limit_, buf_);
+  EG_DCHECK_GE(limit_, buf_);
   return limit_ - buf_;
 }
 
@@ -409,12 +409,12 @@ inline void Decoder::reset(const void* b, size_t maxn) {
 }
 
 inline size_t Decoder::pos() const {
-  S2_DCHECK_GE(buf_, orig_);
+  EG_DCHECK_GE(buf_, orig_);
   return buf_ - orig_;
 }
 
 inline size_t Decoder::avail() const {
-  S2_DCHECK_GE(limit_, buf_);
+  EG_DCHECK_GE(limit_, buf_);
   return limit_ - buf_;
 }
 
@@ -435,7 +435,7 @@ inline void Decoder::getcn(void* dst, int c, size_t n) {
 
 inline void Decoder::gets(void* dst, size_t n) {
   size_t len = n - 1;
-  S2_DCHECK_GE(limit_, buf_);
+  EG_DCHECK_GE(limit_, buf_);
   if (n > static_cast<size_t>(1 + limit_ - buf_)) {
     len = limit_ - buf_;
   }
@@ -465,25 +465,25 @@ inline void DecoderExtensions::FillArray(Decoder* array, int num_decoders) {
 }
 
 inline void Encoder::put8(unsigned char v) {
-  S2_DCHECK_GE(avail(), sizeof(v));
+  EG_DCHECK_GE(avail(), sizeof(v));
   *buf_ = v;
   buf_ += sizeof(v);
 }
 
 inline void Encoder::put16(uint16 v) {
-  S2_DCHECK_GE(avail(), sizeof(v));
+  EG_DCHECK_GE(avail(), sizeof(v));
   LittleEndian::Store16(buf_, v);
   buf_ += sizeof(v);
 }
 
 inline void Encoder::put32(uint32 v) {
-  S2_DCHECK_GE(avail(), sizeof(v));
+  EG_DCHECK_GE(avail(), sizeof(v));
   LittleEndian::Store32(buf_, v);
   buf_ += sizeof(v);
 }
 
 inline void Encoder::put64(uint64 v) {
-  S2_DCHECK_GE(avail(), sizeof(v));
+  EG_DCHECK_GE(avail(), sizeof(v));
   LittleEndian::Store64(buf_, v);
   buf_ += sizeof(v);
 }
@@ -550,4 +550,4 @@ inline bool Decoder::get_varint64(uint64* v) {
   return true;
 }
 
-#endif  // S2_UTIL_CODING_CODER_H_
+#endif  // EG_UTIL_CODING_CODER_H_

@@ -6,6 +6,7 @@
 #define EARTHGRID_EGREGION_H
 
 #include <vector>
+#include "core/EGPoint.h"
 
 class EGSphereCap;
 class EGCell;

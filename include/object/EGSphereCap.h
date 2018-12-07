@@ -7,6 +7,8 @@
 
 #include "core/EGPoint.h"
 #include "object/EGRegion.h"
+#include "core/EG1DAngle.h"
+#include "core/EG1DChordAngle.h"
 
 
 // EGSphereCap represents a disc-shaped region defined by a center and radius.
@@ -34,16 +36,16 @@
 class EGSphereCap final : public EGRegion {
 public:
     // The default constructor returns an empty EGSphereCap.
-    EGSphereCap() : center_(1, 0, 0), radius_(S1ChordAngle::Negative()) {}
+    EGSphereCap() : center_(1, 0, 0), radius_(EG1DChordAngle::Negative()) {}
 
     // Constructs a cap with the given center and radius.  A negative radius
     // yields an empty cap; a radius of 180 degrees or more yields a full cap
     // (containing the entire sphere).  "center" should be unit length.
-    EGSphereCap(const EGPoint& center, S1Angle radius);
+    EGSphereCap(const EGPoint& center, EG1DAngle radius);
 
-    // Constructs a cap where the angle is expressed as an S1ChordAngle.  This
+    // Constructs a cap where the angle is expressed as an EG1DChordAngle.  This
     // constructor is more efficient than the one above.
-    EGSphereCap(const EGPoint& center, S1ChordAngle radius);
+    EGSphereCap(const EGPoint& center, EG1DChordAngle radius);
 
     // Convenience function that creates a cap containing a single point.  This
     // method is more efficient that the EGSphereCap(center, radius) constructor.
@@ -70,17 +72,17 @@ public:
 
     // Accessor methods.
     const EGPoint& center() const { return center_; }
-    S1ChordAngle radius() const { return radius_; }
+    EG1DChordAngle radius() const { return radius_; }
 
     // Returns the height of the cap, i.e. the distance from the center point to
     // the cutoff plane.
     double height() const;
 
-    // Return the cap radius as an S1Angle.  (Note that the cap angle is stored
-    // internally as an S1ChordAngle, so this method requires a trigonometric
+    // Return the cap radius as an EG1DAngle.  (Note that the cap angle is stored
+    // internally as an EG1DChordAngle, so this method requires a trigonometric
     // operation and may yield a slightly different result than the value passed
-    // to the (EGPoint, S1Angle) constructor.)
-    S1Angle GetRadius() const;
+    // to the (EGPoint, EG1DAngle) constructor.)
+    EG1DAngle GetRadius() const;
 
     // Return the area of the cap.
     double GetArea() const;
@@ -146,7 +148,7 @@ public:
 
     // Return a cap that contains all points within a given distance of this
     // cap.  Note that any expansion of the empty cap is still empty.
-    EGSphereCap Expanded(S1Angle distance) const;
+    EGSphereCap Expanded(EG1DAngle distance) const;
 
     // Return the smallest cap which encloses this cap and "other".
     EGSphereCap Union(const EGSphereCap& other) const;
@@ -183,7 +185,7 @@ public:
     // Return true if the cap center and height differ by at most "max_error"
     // from the given cap "other".
     bool ApproxEquals(const EGSphereCap& other,
-                      S1Angle max_error = S1Angle::Radians(1e-14)) const;
+                      EG1DAngle max_error = EG1DAngle::Radians(1e-14)) const;
 
 private:
     // Here are some useful relationships between the cap height (h), the cap
@@ -200,7 +202,7 @@ private:
     bool Intersects(const EGCell& cell, const EGPoint* vertices) const;
 
     EGPoint center_;
-    S1ChordAngle radius_;
+    EG1DChordAngle radius_;
 };
 
 

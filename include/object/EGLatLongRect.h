@@ -5,8 +5,9 @@
 #ifndef EARTHGRID_EGLATLONGRECT_H
 #define EARTHGRID_EGLATLONGRECT_H
 
+#include "object/EGRegion.h"
 
-class EGLatLongRect final : public S2Region {
+class EGLatLongRect final : public EGRegion {
 
 };
 

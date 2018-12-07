@@ -5,8 +5,9 @@
 #ifndef EARTHGRID_EGCELL_H
 #define EARTHGRID_EGCELL_H
 
+#include "object/EGRegion.h"
 
-class EGCell final : public S2Region {
+class EGCell final : public EGRegion {
 
 };
 
