@@ -13,41 +13,41 @@
 // limitations under the License.
 //
 
-#ifndef EG_BASE_LOGGING_H_
-#define EG_BASE_LOGGING_H_
+#ifndef S2_BASE_LOGGING_H_
+#define S2_BASE_LOGGING_H_
 
-#ifdef EG_USE_GLOG
+#ifdef S2_USE_GLOG
 
 #include <glog/logging.h>
 
 // The names CHECK, etc. are too common and may conflict with other
-// packages.  We use EG_CHECK to make it easier to switch to
+// packages.  We use S2_CHECK to make it easier to switch to
 // something other than GLOG for logging.
 
-#define EG_LOG LOG
-#define EG_LOG_IF LOG_IF
-#define EG_DLOG_IF DLOG_IF
+#define S2_LOG LOG
+#define S2_LOG_IF LOG_IF
+#define S2_DLOG_IF DLOG_IF
 
-#define EG_CHECK CHECK
-#define EG_CHECK_EQ CHECK_EQ
-#define EG_CHECK_NE CHECK_NE
-#define EG_CHECK_LT CHECK_LT
-#define EG_CHECK_LE CHECK_LE
-#define EG_CHECK_GT CHECK_GT
-#define EG_CHECK_GE CHECK_GE
+#define S2_CHECK CHECK
+#define S2_CHECK_EQ CHECK_EQ
+#define S2_CHECK_NE CHECK_NE
+#define S2_CHECK_LT CHECK_LT
+#define S2_CHECK_LE CHECK_LE
+#define S2_CHECK_GT CHECK_GT
+#define S2_CHECK_GE CHECK_GE
 
-#define EG_DCHECK DCHECK
-#define EG_DCHECK_EQ DCHECK_EQ
-#define EG_DCHECK_NE DCHECK_NE
-#define EG_DCHECK_LT DCHECK_LT
-#define EG_DCHECK_LE DCHECK_LE
-#define EG_DCHECK_GT DCHECK_GT
-#define EG_DCHECK_GE DCHECK_GE
+#define S2_DCHECK DCHECK
+#define S2_DCHECK_EQ DCHECK_EQ
+#define S2_DCHECK_NE DCHECK_NE
+#define S2_DCHECK_LT DCHECK_LT
+#define S2_DCHECK_LE DCHECK_LE
+#define S2_DCHECK_GT DCHECK_GT
+#define S2_DCHECK_GE DCHECK_GE
 
-#define EG_VLOG VLOG
-#define EG_VLOG_IS_ON VLOG_IS_ON
+#define S2_VLOG VLOG
+#define S2_VLOG_IS_ON VLOG_IS_ON
 
-#else  // !defined(EG_USE_GLOG)
+#else  // !defined(S2_USE_GLOG)
 
 #include <iostream>
 
@@ -55,9 +55,9 @@
 #include "third_party/absl/base/attributes.h"
 #include "third_party/absl/base/log_severity.h"
 
-class EGLogMessage {
+class S2LogMessage {
  public:
-  EGLogMessage(const char* file, int line,
+  S2LogMessage(const char* file, int line,
                absl::LogSeverity severity, std::ostream& stream)
     : severity_(severity), stream_(stream) {
     if (enabled()) {
@@ -65,7 +65,7 @@ class EGLogMessage {
               << absl::LogSeverityName(severity) << " ";
     }
   }
-  ~EGLogMessage() { if (enabled()) stream_ << std::endl; }
+  ~S2LogMessage() { if (enabled()) stream_ << std::endl; }
 
   std::ostream& stream() { return stream_; }
 
@@ -83,91 +83,91 @@ class EGLogMessage {
   std::ostream& stream_;
 };
 
-// Same as EGLogMessage, but destructor is marked no-return to avoid
+// Same as S2LogMessage, but destructor is marked no-return to avoid
 // "no return value warnings" in functions that return non-void.
-class EGFatalLogMessage : public EGLogMessage {
+class S2FatalLogMessage : public S2LogMessage {
  public:
-  EGFatalLogMessage(const char* file, int line,
+  S2FatalLogMessage(const char* file, int line,
                     absl::LogSeverity severity, std::ostream& stream)
       ABSL_ATTRIBUTE_COLD
-    : EGLogMessage(file, line, severity, stream) {}
-  ABSL_ATTRIBUTE_NORETURN ~EGFatalLogMessage() { abort(); }
+    : S2LogMessage(file, line, severity, stream) {}
+  ABSL_ATTRIBUTE_NORETURN ~S2FatalLogMessage() { abort(); }
 };
 
 // Logging stream that does nothing.
-struct EGNullStream {
+struct S2NullStream {
   template <typename T>
-  EGNullStream& operator<<(const T& v) { return *this; }
+  S2NullStream& operator<<(const T& v) { return *this; }
 };
 
 // Used to suppress "unused value" warnings.
-struct EGLogMessageVoidify {
+struct S2LogMessageVoidify {
   // Must have precedence lower than << but higher than ?:.
   void operator&(std::ostream&) {}
 };
 
-#define EG_LOG_MESSAGE_(LogMessageClass, log_severity) \
+#define S2_LOG_MESSAGE_(LogMessageClass, log_severity) \
     LogMessageClass(__FILE__, __LINE__, log_severity, std::cerr)
-#define EG_LOG_INFO \
-    EG_LOG_MESSAGE_(EGLogMessage, absl::LogSeverity::kInfo)
-#define EG_LOG_WARNING \
-    EG_LOG_MESSAGE_(EGLogMessage, absl::LogSeverity::kWarning)
-#define EG_LOG_ERROR \
-    EG_LOG_MESSAGE_(EGLogMessage, absl::LogSeverity::kError)
-#define EG_LOG_FATAL \
-    EG_LOG_MESSAGE_(EGFatalLogMessage, absl::LogSeverity::kFatal)
+#define S2_LOG_INFO \
+    S2_LOG_MESSAGE_(S2LogMessage, absl::LogSeverity::kInfo)
+#define S2_LOG_WARNING \
+    S2_LOG_MESSAGE_(S2LogMessage, absl::LogSeverity::kWarning)
+#define S2_LOG_ERROR \
+    S2_LOG_MESSAGE_(S2LogMessage, absl::LogSeverity::kError)
+#define S2_LOG_FATAL \
+    S2_LOG_MESSAGE_(S2FatalLogMessage, absl::LogSeverity::kFatal)
 #ifndef NDEBUG
-#define EG_LOG_DFATAL EG_LOG_FATAL
+#define S2_LOG_DFATAL S2_LOG_FATAL
 #else
-#define EG_LOG_DFATAL EG_LOG_ERROR
+#define S2_LOG_DFATAL S2_LOG_ERROR
 #endif
 
-#define EG_LOG(severity) EG_LOG_##severity.stream()
+#define S2_LOG(severity) S2_LOG_##severity.stream()
 
-// Implementing this as if (...) {} else EG_LOG(...) will cause dangling else
-// warnings when someone does if (...) EG_LOG_IF(...), so do this tricky
+// Implementing this as if (...) {} else S2_LOG(...) will cause dangling else
+// warnings when someone does if (...) S2_LOG_IF(...), so do this tricky
 // thing instead.
-#define EG_LOG_IF(severity, condition) \
-    !(condition) ? (void)0 : EGLogMessageVoidify() & EG_LOG(severity)
+#define S2_LOG_IF(severity, condition) \
+    !(condition) ? (void)0 : S2LogMessageVoidify() & S2_LOG(severity)
 
-#define EG_CHECK(condition) \
-    EG_LOG_IF(FATAL, ABSL_PREDICT_FALSE(!(condition))) \
+#define S2_CHECK(condition) \
+    S2_LOG_IF(FATAL, ABSL_PREDICT_FALSE(!(condition))) \
         << ("Check failed: " #condition " ")
 
 #ifndef NDEBUG
 
-#define EG_DLOG_IF EG_LOG_IF
-#define EG_DCHECK EG_CHECK
+#define S2_DLOG_IF S2_LOG_IF
+#define S2_DCHECK S2_CHECK
 
 #else  // defined(NDEBUG)
 
-#define EG_DLOG_IF(severity, condition) \
-    while (false && (condition)) EGNullStream()
-#define EG_DCHECK(condition) \
-    while (false && (condition)) EGNullStream()
+#define S2_DLOG_IF(severity, condition) \
+    while (false && (condition)) S2NullStream()
+#define S2_DCHECK(condition) \
+    while (false && (condition)) S2NullStream()
 
 #endif  // defined(NDEBUG)
 
-#define EG_CHECK_OP(op, val1, val2) EG_CHECK((val1) op (val2))
-#define EG_CHECK_EQ(val1, val2) EG_CHECK_OP(==, val1, val2)
-#define EG_CHECK_NE(val1, val2) EG_CHECK_OP(!=, val1, val2)
-#define EG_CHECK_LT(val1, val2) EG_CHECK_OP(<, val1, val2)
-#define EG_CHECK_LE(val1, val2) EG_CHECK_OP(<=, val1, val2)
-#define EG_CHECK_GT(val1, val2) EG_CHECK_OP(>, val1, val2)
-#define EG_CHECK_GE(val1, val2) EG_CHECK_OP(>=, val1, val2)
+#define S2_CHECK_OP(op, val1, val2) S2_CHECK((val1) op (val2))
+#define S2_CHECK_EQ(val1, val2) S2_CHECK_OP(==, val1, val2)
+#define S2_CHECK_NE(val1, val2) S2_CHECK_OP(!=, val1, val2)
+#define S2_CHECK_LT(val1, val2) S2_CHECK_OP(<, val1, val2)
+#define S2_CHECK_LE(val1, val2) S2_CHECK_OP(<=, val1, val2)
+#define S2_CHECK_GT(val1, val2) S2_CHECK_OP(>, val1, val2)
+#define S2_CHECK_GE(val1, val2) S2_CHECK_OP(>=, val1, val2)
 
-#define EG_DCHECK_OP(op, val1, val2) EG_DCHECK((val1) op (val2))
-#define EG_DCHECK_EQ(val1, val2) EG_DCHECK_OP(==, val1, val2)
-#define EG_DCHECK_NE(val1, val2) EG_DCHECK_OP(!=, val1, val2)
-#define EG_DCHECK_LT(val1, val2) EG_DCHECK_OP(<, val1, val2)
-#define EG_DCHECK_LE(val1, val2) EG_DCHECK_OP(<=, val1, val2)
-#define EG_DCHECK_GT(val1, val2) EG_DCHECK_OP(>, val1, val2)
-#define EG_DCHECK_GE(val1, val2) EG_DCHECK_OP(>=, val1, val2)
+#define S2_DCHECK_OP(op, val1, val2) S2_DCHECK((val1) op (val2))
+#define S2_DCHECK_EQ(val1, val2) S2_DCHECK_OP(==, val1, val2)
+#define S2_DCHECK_NE(val1, val2) S2_DCHECK_OP(!=, val1, val2)
+#define S2_DCHECK_LT(val1, val2) S2_DCHECK_OP(<, val1, val2)
+#define S2_DCHECK_LE(val1, val2) S2_DCHECK_OP(<=, val1, val2)
+#define S2_DCHECK_GT(val1, val2) S2_DCHECK_OP(>, val1, val2)
+#define S2_DCHECK_GE(val1, val2) S2_DCHECK_OP(>=, val1, val2)
 
 // We don't support VLOG.
-#define EG_VLOG(verbose_level) EGNullStream()
-#define EG_VLOG_IS_ON(verbose_level) (false)
+#define S2_VLOG(verbose_level) S2NullStream()
+#define S2_VLOG_IS_ON(verbose_level) (false)
 
-#endif  // !defined(EG_USE_GLOG)
+#endif  // !defined(S2_USE_GLOG)
 
-#endif  // EG_BASE_LOGGING_H_
+#endif  // S2_BASE_LOGGING_H_

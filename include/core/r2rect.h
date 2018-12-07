@@ -15,15 +15,15 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#ifndef EG_R2RECT_H_
-#define EG_R2RECT_H_
+#ifndef S2_R2RECT_H_
+#define S2_R2RECT_H_
 
 #include <iosfwd>
 
 #include "base/logging.h"
 #include "_fp_contract_off.h"
-#include "core/EG1DInterval.h"
-#include "r2.h"
+#include "core/r1interval.h"
+#include "core/r2.h"
 
 // An R2Rect represents a closed axis-aligned rectangle in the (x,y) plane.
 //
@@ -37,7 +37,7 @@ class R2Rect {
 
   // Construct a rectangle from the given intervals in x and y.  The two
   // intervals must either be both empty or both non-empty.
-  R2Rect(const EG1DInterval& x, const EG1DInterval& y);
+  R2Rect(const R1Interval& x, const R1Interval& y);
 
   // The default constructor creates an empty R2Rect.
   R2Rect();
@@ -62,14 +62,14 @@ class R2Rect {
   static R2Rect FromPointPair(const R2Point& p1, const R2Point& p2);
 
   // Accessor methods.
-  const EG1DInterval& x() const { return bounds_[0]; }
-  const EG1DInterval& y() const { return bounds_[1]; }
+  const R1Interval& x() const { return bounds_[0]; }
+  const R1Interval& y() const { return bounds_[1]; }
   R2Point lo() const { return R2Point(x().lo(), y().lo()); }
   R2Point hi() const { return R2Point(x().hi(), y().hi()); }
 
   // Methods that allow the R2Rect to be accessed as a vector.
-  const EG1DInterval& operator[](int i) const { return bounds_[i]; }
-  EG1DInterval& operator[](int i) { return bounds_[i]; }
+  const R1Interval& operator[](int i) const { return bounds_[i]; }
+  R1Interval& operator[](int i) { return bounds_[i]; }
 
   // Return true if the rectangle is valid, which essentially just means
   // that if the bound for either axis is empty then both must be.
@@ -153,32 +153,32 @@ class R2Rect {
   bool operator==(const R2Rect& other) const;
 
   // Return true if the x- and y-intervals of the two rectangles are the same
-  // up to the given tolerance (see EG1DInterval.h for details).
+  // up to the given tolerance (see r1interval.h for details).
   bool ApproxEquals(const R2Rect& other, double max_error = 1e-15) const;
 
  private:
-  EG1DInterval bounds_[2];
+  R1Interval bounds_[2];
 };
 
 inline R2Rect::R2Rect(const R2Point& lo, const R2Point& hi) {
-  bounds_[0] = EG1DInterval(lo.x(), hi.x());
-  bounds_[1] = EG1DInterval(lo.y(), hi.y());
-  EG_DCHECK(is_valid());
+  bounds_[0] = R1Interval(lo.x(), hi.x());
+  bounds_[1] = R1Interval(lo.y(), hi.y());
+  S2_DCHECK(is_valid());
 }
 
-inline R2Rect::R2Rect(const EG1DInterval& x, const EG1DInterval& y) {
+inline R2Rect::R2Rect(const R1Interval& x, const R1Interval& y) {
   bounds_[0] = x;
   bounds_[1] = y;
-  EG_DCHECK(is_valid());
+  S2_DCHECK(is_valid());
 }
 
 inline R2Rect::R2Rect() {
-  // The default EG1DInterval constructor creates an empty interval.
-  EG_DCHECK(is_valid());
+  // The default R1Interval constructor creates an empty interval.
+  S2_DCHECK(is_valid());
 }
 
 inline R2Rect R2Rect::Empty() {
-  return R2Rect(EG1DInterval::Empty(), EG1DInterval::Empty());
+  return R2Rect(R1Interval::Empty(), R1Interval::Empty());
 }
 
 inline bool R2Rect::is_valid() const {
@@ -231,4 +231,4 @@ inline bool R2Rect::operator==(const R2Rect& other) const {
 
 std::ostream& operator<<(std::ostream& os, const R2Rect& r);
 
-#endif  // EG_R2RECT_H_
+#endif  // S2_R2RECT_H_

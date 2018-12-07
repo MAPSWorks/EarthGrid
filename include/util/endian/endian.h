@@ -85,6 +85,8 @@ inline absl::uint128 gbswap_128(absl::uint128 host_int) {
                            gbswap_64(absl::Uint128High64(host_int)));
 }
 
+#define IS_LITTLE_ENDIAN
+
 #ifdef IS_LITTLE_ENDIAN
 
 // Definitions for ntohl etc. that don't require us to include
@@ -107,7 +109,7 @@ inline uint32 ghtonl(uint32 x) { return x; }
 inline uint64 ghtonll(uint64 x) { return x; }
 
 #else
-#error "Unsupported bytesex: Either IS_BIG_ENDIAN or IS_LITTLE_ENDIAN must be defined"  // NOLINT
+  #error "Unsupported bytesex: Either IS_BIG_ENDIAN or IS_LITTLE_ENDIAN must be defined"  // NOLINT
 #endif  // bytesex
 
 #ifndef htonll
@@ -603,7 +605,7 @@ GeneralFormatConverter<EndianClass, ValueType>::FromHost(ValueType v) {
       return EndianClass::FromHost64(static_cast<uint64>(v));
       break;
     default:
-      EG_LOG(FATAL) << "Unexpected value size: " << sizeof(ValueType);
+      S2_LOG(FATAL) << "Unexpected value size: " << sizeof(ValueType);
   }
 }
 
@@ -628,7 +630,7 @@ GeneralFormatConverter<EndianClass, ValueType>::ToHost(ValueType v) {
       return EndianClass::ToHost64(static_cast<uint64>(v));
       break;
     default:
-      EG_LOG(FATAL) << "Unexpected value size: " << sizeof(ValueType);
+      S2_LOG(FATAL) << "Unexpected value size: " << sizeof(ValueType);
   }
 }
 
@@ -694,7 +696,7 @@ inline T LoadInteger(const char* p) {
     case 4: return EndianClass::ToHost32(UNALIGNED_LOAD32(p));
     case 8: return EndianClass::ToHost64(UNALIGNED_LOAD64(p));
     default: {
-      EG_LOG(FATAL) << "Not reached!";
+      S2_LOG(FATAL) << "Not reached!";
       return 0;
     }
   }
@@ -712,7 +714,7 @@ inline void StoreInteger(T value, char* p) {
     case 4: UNALIGNED_STORE32(p, EndianClass::FromHost32(value)); break;
     case 8: UNALIGNED_STORE64(p, EndianClass::FromHost64(value)); break;
     default: {
-      EG_LOG(FATAL) << "Not reached!";
+      S2_LOG(FATAL) << "Not reached!";
     }
   }
 }
@@ -855,4 +857,4 @@ inline void BigEndian::Store<absl::uint128>(absl::uint128 value, char* p) {
   BigEndian::Store128(p, value);
 }
 
-#endif  // EG_UTIL_ENDIAN_ENDIAN_H_
+#endif  // S2_UTIL_ENDIAN_ENDIAN_H_

@@ -9,6 +9,8 @@ aux_source_directory("${PROJECT_SRC_DIR}/third_party/absl/numeric" THIRDPARTY_SR
 aux_source_directory("${PROJECT_SRC_DIR}/third_party/absl/strings" THIRDPARTY_SRCS)
 aux_source_directory("${PROJECT_SRC_DIR}/third_party/absl/strings/internal" THIRDPARTY_SRCS)
 
+aux_source_directory("${PROJECT_SRC_DIR}/strings" STRINGS_SRCS)
+
 aux_source_directory("${PROJECT_SRC_DIR}/util/bits" UTIL_SRCS)
 aux_source_directory("${PROJECT_SRC_DIR}/util/coding" UTIL_SRCS)
 aux_source_directory("${PROJECT_SRC_DIR}/util/math" UTIL_SRCS)
@@ -27,6 +29,7 @@ set(CMAKE_C_FLAGS "w")
 
 
 add_library(third_party ${THIRDPARTY_SRCS})
+add_library(strings ${STRINGS_SRCS})
 add_library(util ${UTIL_SRCS})
 add_library(base ${BASE_SRCS})
 add_library(core  ${CORE_SRCS} )

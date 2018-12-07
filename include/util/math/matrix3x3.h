@@ -231,29 +231,29 @@ class Matrix3x3 {
 
   // Return matrix element (i,j) with 0<=i<=2 0<=j<=2
   inline VType &operator()(const int i, const int j) {
-    EG_DCHECK_GE(i, 0);
-    EG_DCHECK_LT(i, 3);
-    EG_DCHECK_GE(j, 0);
-    EG_DCHECK_LT(j, 3);
+    S2_DCHECK_GE(i, 0);
+    S2_DCHECK_LT(i, 3);
+    S2_DCHECK_GE(j, 0);
+    S2_DCHECK_LT(j, 3);
     return m_[i][j];
   }
   inline VType operator()(const int i, const int j) const {
-    EG_DCHECK_GE(i, 0);
-    EG_DCHECK_LT(i, 3);
-    EG_DCHECK_GE(j, 0);
-    EG_DCHECK_LT(j, 3);
+    S2_DCHECK_GE(i, 0);
+    S2_DCHECK_LT(i, 3);
+    S2_DCHECK_GE(j, 0);
+    S2_DCHECK_LT(j, 3);
     return m_[i][j];
   }
 
   // Return matrix element (i/3,i%3) with 0<=i<=8 (access concatenated rows).
   inline VType &operator[](const int i) {
-    EG_DCHECK_GE(i, 0);
-    EG_DCHECK_LT(i, 9);
+    S2_DCHECK_GE(i, 0);
+    S2_DCHECK_LT(i, 9);
     return reinterpret_cast<VType*>(m_)[i];
   }
   inline VType operator[](const int i) const {
-    EG_DCHECK_GE(i, 0);
-    EG_DCHECK_LT(i, 9);
+    S2_DCHECK_GE(i, 0);
+    S2_DCHECK_LT(i, 9);
     return reinterpret_cast<const VType*>(m_)[i];
   }
 
@@ -289,15 +289,15 @@ class Matrix3x3 {
 
   // Return the vector 3D at row i
   inline MVector Row(const int i) const {
-    EG_DCHECK_GE(i, 0);
-    EG_DCHECK_LT(i, 3);
+    S2_DCHECK_GE(i, 0);
+    S2_DCHECK_LT(i, 3);
     return MVector(m_[i][0], m_[i][1], m_[i][2]);
   }
 
   // Return the vector 3D at col i
   inline MVector Col(const int i) const {
-    EG_DCHECK_GE(i, 0);
-    EG_DCHECK_LT(i, 3);
+    S2_DCHECK_GE(i, 0);
+    S2_DCHECK_LT(i, 3);
     return MVector(m_[0][i], m_[1][i], m_[2][i]);
   }
 
@@ -325,8 +325,8 @@ class Matrix3x3 {
 
   // Set the vector in row i to be v1
   void SetRow(int i, const MVector &v1) {
-    EG_DCHECK_GE(i, 0);
-    EG_DCHECK_LT(i, 3);
+    S2_DCHECK_GE(i, 0);
+    S2_DCHECK_LT(i, 3);
     m_[i][0] = v1[0];
     m_[i][1] = v1[1];
     m_[i][2] = v1[2];
@@ -334,8 +334,8 @@ class Matrix3x3 {
 
   // Set the vector in column i to be v1
   void SetCol(int i, const MVector &v1) {
-    EG_DCHECK_GE(i, 0);
-    EG_DCHECK_LT(i, 3);
+    S2_DCHECK_GE(i, 0);
+    S2_DCHECK_LT(i, 3);
     m_[0][i] = v1[0];
     m_[1][i] = v1[1];
     m_[2][i] = v1[2];
