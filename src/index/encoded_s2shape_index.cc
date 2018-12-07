@@ -15,7 +15,7 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "encode/encoded_s2shape_index.h"
+#include "index/encoded_s2shape_index.h"
 
 #include <memory>
 #include "third_party/absl/memory/memory.h"
