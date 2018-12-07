@@ -26,7 +26,7 @@
 
 #include "core/s1angle.h"
 #include "core/s2point.h"
-#include "core/s2shape.h"
+#include "shape/s2shape.h"
 
 namespace S2 {
 

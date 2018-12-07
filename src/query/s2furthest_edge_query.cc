@@ -13,11 +13,11 @@
 // limitations under the License.
 //
 
-#include "s2/s2furthest_edge_query.h"
+#include "query/s2furthest_edge_query.h"
 
 #include <vector>
 
-#include "s2/s2edge_distances.h"
+#include "core/s2edge_distances.h"
 
 void S2FurthestEdgeQuery::Options::set_conservative_min_distance(
     S1ChordAngle min_distance) {

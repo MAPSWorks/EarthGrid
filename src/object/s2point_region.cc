@@ -15,15 +15,15 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2point_region.h"
+#include "object/s2point_region.h"
 
-#include "s2/base/logging.h"
-#include "s2/util/coding/coder.h"
-#include "s2/s2cap.h"
-#include "s2/s2cell.h"
-#include "s2/s2latlng.h"
-#include "s2/s2latlng_rect.h"
-#include "s2/s2pointutil.h"
+#include "base/logging.h"
+#include "util/coding/coder.h"
+#include "object/s2cap.h"
+#include "object/s2cell.h"
+#include "core/s2latlng.h"
+#include "object/s2latlng_rect.h"
+#include "core/s2pointutil.h"
 
 static const unsigned char kCurrentLosslessEncodingVersionNumber = 1;
 

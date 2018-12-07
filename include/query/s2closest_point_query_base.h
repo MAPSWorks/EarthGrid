@@ -22,16 +22,16 @@
 
 #include <vector>
 
-#include "s2/base/logging.h"
-#include "s2/third_party/absl/container/inlined_vector.h"
-#include "s2/s1chord_angle.h"
-#include "s2/s2cap.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2cell_union.h"
-#include "s2/s2distance_target.h"
-#include "s2/s2edge_distances.h"
-#include "s2/s2point_index.h"
-#include "s2/s2region_coverer.h"
+#include "base/logging.h"
+#include "third_party/absl/container/inlined_vector.h"
+#include "core/s1chord_angle.h"
+#include "object/s2cap.h"
+#include "core/s2cell_id.h"
+#include "object/s2cell_union.h"
+#include "query/s2distance_target.h"
+#include "core/s2edge_distances.h"
+#include "index/s2point_index.h"
+#include "object/s2region_coverer.h"
 
 // Options that control the set of points returned.  Note that by default
 // *all* points are returned, so you will always want to set either the

@@ -15,7 +15,7 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2region_coverer.h"
+#include "object/s2region_coverer.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -26,13 +26,13 @@
 #include <unordered_set>
 #include <vector>
 
-#include "s2/base/logging.h"
-#include "s2/s1angle.h"
-#include "s2/s2cap.h"
-#include "s2/s2cell_union.h"
-#include "s2/s2metrics.h"
-#include "s2/s2region.h"
-#include "s2/third_party/absl/base/casts.h"
+#include "base/logging.h"
+#include "core/s1angle.h"
+#include "object/s2cap.h"
+#include "object/s2cell_union.h"
+#include "core/s2metrics.h"
+#include "object/s2region.h"
+#include "third_party/absl/base/casts.h"
 
 using std::is_sorted;
 using std::max;

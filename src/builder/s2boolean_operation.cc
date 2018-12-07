@@ -62,25 +62,25 @@
 //  - GraphEdgeClipper: a helper class that does the actual work of the
 //                      EdgeClippingLayer.
 
-#include "s2/s2boolean_operation.h"
+#include "builder/s2boolean_operation.h"
 
 #include <algorithm>
 #include <limits>
 #include <memory>
 #include <utility>
 
-#include "s2/third_party/absl/memory/memory.h"
-#include "s2/s2builder.h"
-#include "s2/s2builder_layer.h"
-#include "s2/s2builderutil_snap_functions.h"
-#include "s2/s2contains_point_query.h"
-#include "s2/s2crossing_edge_query.h"
-#include "s2/s2edge_crosser.h"
-#include "s2/s2edge_crossings.h"
-#include "s2/s2measures.h"
-#include "s2/s2predicates.h"
-#include "s2/s2shapeutil_visit_crossing_edge_pairs.h"
-#include "s2/util/gtl/btree_map.h"
+#include "third_party/absl/memory/memory.h"
+#include "builder/s2builder.h"
+#include "builder/s2builder_layer.h"
+#include "builder/s2builderutil_snap_functions.h"
+#include "query/s2contains_point_query.h"
+#include "query/s2crossing_edge_query.h"
+#include "core/s2edge_crosser.h"
+#include "core/s2edge_crossings.h"
+#include "core/s2measures.h"
+#include "core/s2predicates.h"
+#include "shape/s2shapeutil_visit_crossing_edge_pairs.h"
+#include "util/gtl/btree_map.h"
 
 // TODO(ericv): Remove this debugging output at some point.
 extern bool s2builder_verbose;

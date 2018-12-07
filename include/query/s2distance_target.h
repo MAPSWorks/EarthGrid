@@ -18,9 +18,9 @@
 #ifndef S2_S2DISTANCE_TARGET_H_
 #define S2_S2DISTANCE_TARGET_H_
 
-#include "s2/s2cap.h"
-#include "s2/s2cell.h"
-#include "s2/s2shape_index.h"
+#include "object/s2cap.h"
+#include "object/s2cell.h"
+#include "shape/s2shape_index.h"
 
 // S2DistanceTarget represents a geometric object to which distances are
 // measured.  For example, there are subtypes for measuring distances to a

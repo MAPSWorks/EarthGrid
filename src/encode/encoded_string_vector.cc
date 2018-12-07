@@ -15,7 +15,7 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/encoded_string_vector.h"
+#include "encode/encoded_string_vector.h"
 
 using absl::MakeSpan;
 using absl::Span;

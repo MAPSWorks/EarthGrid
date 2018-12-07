@@ -20,14 +20,14 @@
 
 #include <vector>
 
-#include "s2/base/logging.h"
-#include "s2/_fp_contract_off.h"
-#include "s2/s1angle.h"
-#include "s2/s1chord_angle.h"
-#include "s2/s2cell.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2closest_cell_query_base.h"
-#include "s2/s2min_distance_targets.h"
+#include "base/logging.h"
+#include "_fp_contract_off.h"
+#include "core/s1angle.h"
+#include "core/s1chord_angle.h"
+#include "object/s2cell.h"
+#include "core/s2cell_id.h"
+#include "query/s2closest_cell_query_base.h"
+#include "query/s2min_distance_targets.h"
 
 // S2ClosestCellQuery is a helper class for finding the closest cell(s) to a
 // given point, edge, S2Cell, S2CellUnion, or geometry collection.  A typical

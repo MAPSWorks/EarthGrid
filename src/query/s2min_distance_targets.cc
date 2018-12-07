@@ -15,17 +15,17 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2min_distance_targets.h"
+#include "query/s2min_distance_targets.h"
 
 #include <memory>
-#include "s2/third_party/absl/memory/memory.h"
-#include "s2/s1angle.h"
-#include "s2/s2cap.h"
-#include "s2/s2cell.h"
-#include "s2/s2closest_cell_query.h"
-#include "s2/s2closest_edge_query.h"
-#include "s2/s2edge_distances.h"
-#include "s2/s2shape_index_region.h"
+#include "third_party/absl/memory/memory.h"
+#include "core/s1angle.h"
+#include "object/s2cap.h"
+#include "object/s2cell.h"
+#include "query/s2closest_cell_query.h"
+#include "query/s2closest_edge_query.h"
+#include "core/s2edge_distances.h"
+#include "object/s2shape_index_region.h"
 
 S2Cap S2MinDistancePointTarget::GetCapBound() {
   return S2Cap(point_, S1ChordAngle::Zero());

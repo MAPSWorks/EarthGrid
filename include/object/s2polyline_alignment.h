@@ -20,7 +20,7 @@
 #include <memory>
 #include <vector>
 
-#include "s2/s2polyline.h"
+#include "object/s2polyline.h"
 
 // This library provides code to compute vertex alignments between S2Polylines.
 //

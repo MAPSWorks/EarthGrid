@@ -25,21 +25,21 @@
 #include <map>
 #include <vector>
 
-#include "s2/base/integral_types.h"
-#include "s2/base/logging.h"
-#include "s2/_fp_contract_off.h"
-#include "s2/mutable_s2shape_index.h"
-#include "s2/s1angle.h"
-#include "s2/s1chord_angle.h"
-#include "s2/s2debug.h"
-#include "s2/s2latlng_rect.h"
-#include "s2/s2loop_measures.h"
-#include "s2/s2pointutil.h"
-#include "s2/s2region.h"
-#include "s2/s2shape_index.h"
-#include "s2/third_party/absl/base/macros.h"
-#include "s2/util/math/matrix3x3.h"
-#include "s2/util/math/vector.h"
+#include "base/integral_types.h"
+#include "base/logging.h"
+#include "_fp_contract_off.h"
+#include "index/mutable_s2shape_index.h"
+#include "core/s1angle.h"
+#include "core/s1chord_angle.h"
+#include "core/s2debug.h"
+#include "object/s2latlng_rect.h"
+#include "core/s2loop_measures.h"
+#include "core/s2pointutil.h"
+#include "object/s2region.h"
+#include "shape/s2shape_index.h"
+#include "third_party/absl/base/macros.h"
+#include "util/math/matrix3x3.h"
+#include "util/math/vector.h"
 
 class Decoder;
 class Encoder;

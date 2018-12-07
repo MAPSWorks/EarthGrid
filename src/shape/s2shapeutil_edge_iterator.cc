@@ -13,9 +13,9 @@
 // limitations under the License.
 //
 
-#include "s2/s2shapeutil_edge_iterator.h"
+#include "shape/s2shapeutil_edge_iterator.h"
 
-#include "s2/third_party/absl/strings/str_cat.h"
+#include "third_party/absl/strings/str_cat.h"
 
 namespace s2shapeutil {
 

@@ -15,7 +15,7 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2builderutil_testing.h"
+#include "builder/s2builderutil_testing.h"
 
 namespace s2builderutil {
 

@@ -18,15 +18,15 @@
 #define S2_S2SHAPE_INDEX_REGION_H_
 
 #include <vector>
-#include "s2/s2cap.h"
-#include "s2/s2cell.h"
-#include "s2/s2cell_union.h"
-#include "s2/s2contains_point_query.h"
-#include "s2/s2edge_clipping.h"
-#include "s2/s2edge_crosser.h"
-#include "s2/s2latlng_rect.h"
-#include "s2/s2region.h"
-#include "s2/s2shape_index.h"
+#include "object/s2cap.h"
+#include "object/s2cell.h"
+#include "object/s2cell_union.h"
+#include "query/s2contains_point_query.h"
+#include "core/s2edge_clipping.h"
+#include "core/s2edge_crosser.h"
+#include "object/s2latlng_rect.h"
+#include "object/s2region.h"
+#include "shape/s2shape_index.h"
 
 // This class wraps an S2ShapeIndex object with the additional methods needed
 // to implement the S2Region API, in order to allow S2RegionCoverer to compute

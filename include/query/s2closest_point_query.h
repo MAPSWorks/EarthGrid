@@ -22,12 +22,12 @@
 
 #include <vector>
 
-#include "s2/base/logging.h"
-#include "s2/s1angle.h"
-#include "s2/s1chord_angle.h"
-#include "s2/s2closest_point_query_base.h"
-#include "s2/s2min_distance_targets.h"
-#include "s2/s2point_index.h"
+#include "base/logging.h"
+#include "core/s1angle.h"
+#include "core/s1chord_angle.h"
+#include "query/s2closest_point_query_base.h"
+#include "query/s2min_distance_targets.h"
+#include "index/s2point_index.h"
 
 // Options that control the set of points returned.  Note that by default
 // *all* points are returned, so you will always want to set either the

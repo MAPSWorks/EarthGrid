@@ -99,6 +99,7 @@ static void InitLookupCell(int level, int i, int j, int orig_orientation,
 }
 
 static std::once_flag flag;
+
 inline static void MaybeInit() {
   std::call_once(flag, []{
     InitLookupCell(0, 0, 0, 0, 0, 0);

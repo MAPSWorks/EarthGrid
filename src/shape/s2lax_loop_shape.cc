@@ -15,12 +15,12 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2lax_loop_shape.h"
+#include "shape/s2lax_loop_shape.h"
 
 #include <vector>
 
-#include "s2/s2loop.h"
-#include "s2/s2shapeutil_get_reference_point.h"
+#include "object/s2loop.h"
+#include "shape/s2shapeutil_get_reference_point.h"
 
 using std::vector;
 using ReferencePoint = S2Shape::ReferencePoint;

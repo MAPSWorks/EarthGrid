@@ -15,18 +15,18 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2builderutil_snap_functions.h"
+#include "builder/s2builderutil_snap_functions.h"
 
 #include <algorithm>
 #include <cfloat>
 #include <cmath>
 #include <memory>
-#include "s2/base/integral_types.h"
-#include "s2/base/logging.h"
-#include "s2/third_party/absl/memory/memory.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2latlng.h"
-#include "s2/s2metrics.h"
+#include "base/integral_types.h"
+#include "base/logging.h"
+#include "third_party/absl/memory/memory.h"
+#include "core/s2cell_id.h"
+#include "core/s2latlng.h"
+#include "core/s2metrics.h"
 
 using absl::make_unique;
 using std::max;

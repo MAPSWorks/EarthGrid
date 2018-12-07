@@ -15,13 +15,13 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2shapeutil_visit_crossing_edge_pairs.h"
+#include "shape/s2shapeutil_visit_crossing_edge_pairs.h"
 
-#include "s2/s2crossing_edge_query.h"
-#include "s2/s2edge_crosser.h"
-#include "s2/s2error.h"
-#include "s2/s2shapeutil_range_iterator.h"
-#include "s2/s2wedge_relations.h"
+#include "query/s2crossing_edge_query.h"
+#include "core/s2edge_crosser.h"
+#include "core/s2error.h"
+#include "shape/s2shapeutil_range_iterator.h"
+#include "core/s2wedge_relations.h"
 
 using std::vector;
 using ChainPosition = S2Shape::ChainPosition;

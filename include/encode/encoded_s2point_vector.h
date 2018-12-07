@@ -18,9 +18,9 @@
 #ifndef S2_ENCODED_S2POINT_VECTOR_H_
 #define S2_ENCODED_S2POINT_VECTOR_H_
 
-#include "s2/third_party/absl/types/span.h"
-#include "s2/encoded_uint_vector.h"
-#include "s2/s2point.h"
+#include "third_party/absl/types/span.h"
+#include "encode/encoded_uint_vector.h"
+#include "core/s2point.h"
 
 namespace s2coding {
 

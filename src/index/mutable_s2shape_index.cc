@@ -15,29 +15,29 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/mutable_s2shape_index.h"
+#include "index/mutable_s2shape_index.h"
 
 #include <algorithm>
 #include <atomic>
 #include <cmath>
 
-#include "s2/base/casts.h"
-#include "s2/base/commandlineflags.h"
-#include "s2/base/spinlock.h"
-#include "s2/encoded_s2cell_id_vector.h"
-#include "s2/encoded_string_vector.h"
-#include "s2/r1interval.h"
-#include "s2/r2.h"
-#include "s2/r2rect.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2cell_union.h"
-#include "s2/s2coords.h"
-#include "s2/s2edge_clipping.h"
-#include "s2/s2edge_crosser.h"
-#include "s2/s2metrics.h"
-#include "s2/s2padded_cell.h"
-#include "s2/s2pointutil.h"
-#include "s2/s2shapeutil_contains_brute_force.h"
+#include "base/casts.h"
+#include "base/commandlineflags.h"
+#include "base/spinlock.h"
+#include "encode/encoded_s2cell_id_vector.h"
+#include "encode/encoded_string_vector.h"
+#include "core/r1interval.h"
+#include "core/r2.h"
+#include "core/r2rect.h"
+#include "core/s2cell_id.h"
+#include "object/s2cell_union.h"
+#include "core/s2coords.h"
+#include "core/s2edge_clipping.h"
+#include "core/s2edge_crosser.h"
+#include "core/s2metrics.h"
+#include "core/s2padded_cell.h"
+#include "core/s2pointutil.h"
+#include "shape/s2shapeutil_contains_brute_force.h"
 
 using std::fabs;
 using std::max;

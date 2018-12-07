@@ -15,18 +15,18 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2shapeutil_coding.h"
+#include "shape/s2shapeutil_coding.h"
 
 #include <memory>
 
-#include "s2/third_party/absl/memory/memory.h"
-#include "s2/encoded_s2point_vector.h"
-#include "s2/encoded_string_vector.h"
-#include "s2/s2lax_polygon_shape.h"
-#include "s2/s2lax_polyline_shape.h"
-#include "s2/s2point_vector_shape.h"
-#include "s2/s2polygon.h"
-#include "s2/s2polyline.h"
+#include "third_party/absl/memory/memory.h"
+#include "encode/encoded_s2point_vector.h"
+#include "encode/encoded_string_vector.h"
+#include "shape/s2lax_polygon_shape.h"
+#include "shape/s2lax_polyline_shape.h"
+#include "shape/s2point_vector_shape.h"
+#include "object/s2polygon.h"
+#include "object/s2polyline.h"
 
 using absl::make_unique;
 using std::make_shared;

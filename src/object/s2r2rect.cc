@@ -15,17 +15,17 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2r2rect.h"
+#include "object/s2r2rect.h"
 
 #include <iosfwd>
 
-#include "s2/base/logging.h"
-#include "s2/r1interval.h"
-#include "s2/s2cap.h"
-#include "s2/s2cell.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2coords.h"
-#include "s2/s2latlng_rect.h"
+#include "base/logging.h"
+#include "core/r1interval.h"
+#include "object/s2cap.h"
+#include "object/s2cell.h"
+#include "core/s2cell_id.h"
+#include "core/s2coords.h"
+#include "object/s2latlng_rect.h"
 
 S2R2Rect S2R2Rect::FromCell(const S2Cell& cell) {
   // S2Cells have a more efficient GetSizeST() method than S2CellIds.

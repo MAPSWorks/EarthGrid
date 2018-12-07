@@ -13,7 +13,7 @@
 // limitations under the License.
 //
 
-#include "core/s2text_format.h"
+#include "encode/s2text_format.h"
 
 #include <string>
 #include <vector>

@@ -20,9 +20,9 @@
 
 #include <memory>
 #include <vector>
-#include "s2/encoded_s2point_vector.h"
-#include "s2/s2polyline.h"
-#include "s2/s2shape.h"
+#include "encode/encoded_s2point_vector.h"
+#include "object/s2polyline.h"
+#include "shape/s2shape.h"
 
 // S2LaxPolylineShape represents a polyline.  It is similar to
 // S2Polyline::Shape except that duplicate vertices are allowed, and the

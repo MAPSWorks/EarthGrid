@@ -18,7 +18,7 @@
 #ifndef S2_S2BUILDER_LAYER_H_
 #define S2_S2BUILDER_LAYER_H_
 
-#include "s2/s2builder_graph.h"
+#include "builder/s2builder_graph.h"
 
 // This class is not needed by ordinary S2Builder clients.  It is only
 // necessary if you wish to implement a new S2Builder::Layer subtype.

@@ -15,7 +15,7 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2padded_cell.h"
+#include "core/s2padded_cell.h"
 
 #include <algorithm>
 #include <cfloat>

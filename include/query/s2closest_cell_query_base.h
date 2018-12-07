@@ -22,18 +22,18 @@
 
 #include <vector>
 
-#include "s2/base/logging.h"
-#include "s2/third_party/absl/container/inlined_vector.h"
-#include "s2/s1chord_angle.h"
-#include "s2/s2cap.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2cell_index.h"
-#include "s2/s2cell_union.h"
-#include "s2/s2distance_target.h"
-#include "s2/s2region_coverer.h"
-#include "s2/util/gtl/btree_set.h"
-#include "s2/util/gtl/dense_hash_set.h"
-#include "s2/util/hash/mix.h"
+#include "base/logging.h"
+#include "third_party/absl/container/inlined_vector.h"
+#include "core/s1chord_angle.h"
+#include "object/s2cap.h"
+#include "core/s2cell_id.h"
+#include "index/s2cell_index.h"
+#include "object/s2cell_union.h"
+#include "query/s2distance_target.h"
+#include "object/s2region_coverer.h"
+#include "util/gtl/btree_set.h"
+#include "util/gtl/dense_hash_set.h"
+#include "util/hash/mix.h"
 
 // S2ClosestCellQueryBase is a templatized class for finding the closest
 // (cell_id, label) pairs in an S2CellIndex to a given target.  It is not

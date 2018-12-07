@@ -20,16 +20,16 @@
 
 #include <memory>
 #include <vector>
-#include "s2/base/logging.h"
-#include "s2/third_party/absl/memory/memory.h"
-#include "s2/id_set_lexicon.h"
-#include "s2/mutable_s2shape_index.h"
-#include "s2/s2builder.h"
-#include "s2/s2builder_graph.h"
-#include "s2/s2builder_layer.h"
-#include "s2/s2debug.h"
-#include "s2/s2error.h"
-#include "s2/s2polyline.h"
+#include "base/logging.h"
+#include "third_party/absl/memory/memory.h"
+#include "core/id_set_lexicon.h"
+#include "index/mutable_s2shape_index.h"
+#include "builder/s2builder.h"
+#include "builder/s2builder_graph.h"
+#include "builder/s2builder_layer.h"
+#include "core/s2debug.h"
+#include "core/s2error.h"
+#include "object/s2polyline.h"
 
 namespace s2builderutil {
 

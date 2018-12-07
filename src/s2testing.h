@@ -30,7 +30,7 @@
 #include "core/r2.h"
 #include "core/s1angle.h"
 #include "core/s1chord_angle.h"
-#include "s2cell_id.h"
+#include "core/s2cell_id.h"
 #include "third_party/absl/base/macros.h"
 #include "util/math/matrix3x3.h"
 

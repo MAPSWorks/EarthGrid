@@ -21,16 +21,16 @@
 #include <memory>
 #include <vector>
 
-#include "s2/base/logging.h"
-#include "s2/_fp_contract_off.h"
-#include "s2/s1angle.h"
-#include "s2/s2debug.h"
-#include "s2/s2error.h"
-#include "s2/s2latlng_rect.h"
-#include "s2/s2region.h"
-#include "s2/s2shape.h"
-#include "s2/third_party/absl/base/macros.h"
-#include "s2/third_party/absl/memory/memory.h"
+#include "base/logging.h"
+#include "_fp_contract_off.h"
+#include "core/s1angle.h"
+#include "core/s2debug.h"
+#include "core/s2error.h"
+#include "object/s2latlng_rect.h"
+#include "object/s2region.h"
+#include "shape/s2shape.h"
+#include "third_party/absl/base/macros.h"
+#include "third_party/absl/memory/memory.h"
 
 class Decoder;
 class Encoder;

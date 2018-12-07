@@ -15,11 +15,11 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2region.h"
+#include "object/s2region.h"
 
 #include <vector>
 
-#include "s2/s2cap.h"
+#include "object/s2cap.h"
 
 void S2Region::GetCellUnionBound(std::vector<S2CellId> *cell_ids) const {
   return GetCapBound().GetCellUnionBound(cell_ids);

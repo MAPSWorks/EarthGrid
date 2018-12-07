@@ -15,7 +15,7 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/encoded_s2point_vector.h"
+#include "encode/encoded_s2point_vector.h"
 
 using absl::Span;
 using std::vector;

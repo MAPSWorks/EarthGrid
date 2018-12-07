@@ -15,20 +15,20 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2cell_union.h"
+#include "object/s2cell_union.h"
 
 #include <algorithm>
 #include <vector>
 
-#include "s2/base/integral_types.h"
-#include "s2/base/logging.h"
-#include "s2/s1angle.h"
-#include "s2/s2cap.h"
-#include "s2/s2cell.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2latlng_rect.h"
-#include "s2/s2metrics.h"
-#include "s2/util/coding/coder.h"
+#include "base/integral_types.h"
+#include "base/logging.h"
+#include "core/s1angle.h"
+#include "object/s2cap.h"
+#include "object/s2cell.h"
+#include "core/s2cell_id.h"
+#include "object/s2latlng_rect.h"
+#include "core/s2metrics.h"
+#include "util/coding/coder.h"
 
 using std::is_sorted;
 using std::max;

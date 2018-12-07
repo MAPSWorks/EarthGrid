@@ -20,9 +20,9 @@
 
 #include <vector>
 
-#include "s2/s2edge_crosser.h"
-#include "s2/s2shape_index.h"
-#include "s2/s2shapeutil_shape_edge.h"
+#include "core/s2edge_crosser.h"
+#include "shape/s2shape_index.h"
+#include "shape/s2shapeutil_shape_edge.h"
 
 // Defines whether shapes are considered to contain their vertices.  Note that
 // these definitions differ from the ones used by S2BooleanOperation.

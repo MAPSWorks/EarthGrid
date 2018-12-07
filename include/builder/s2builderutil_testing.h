@@ -20,10 +20,10 @@
 
 #include <vector>
 
-#include "s2/third_party/absl/memory/memory.h"
-#include "s2/s2builder.h"
-#include "s2/s2builder_graph.h"
-#include "s2/s2builder_layer.h"
+#include "third_party/absl/memory/memory.h"
+#include "builder/s2builder.h"
+#include "builder/s2builder_graph.h"
+#include "builder/s2builder_layer.h"
 
 namespace s2builderutil {
 

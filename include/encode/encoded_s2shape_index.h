@@ -18,9 +18,9 @@
 #ifndef S2_ENCODED_S2SHAPE_INDEX_H_
 #define S2_ENCODED_S2SHAPE_INDEX_H_
 
-#include "s2/encoded_s2cell_id_vector.h"
-#include "s2/encoded_string_vector.h"
-#include "s2/mutable_s2shape_index.h"
+#include "encode/encoded_s2cell_id_vector.h"
+#include "encode/encoded_string_vector.h"
+#include "index/mutable_s2shape_index.h"
 
 class EncodedS2ShapeIndex final : public S2ShapeIndex {
  public:

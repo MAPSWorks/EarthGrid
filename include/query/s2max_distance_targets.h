@@ -23,13 +23,13 @@
 
 #include <memory>
 
-#include "s2/_fp_contract_off.h"
-#include "s2/s1angle.h"
-#include "s2/s1chord_angle.h"
-#include "s2/s2cell.h"
-#include "s2/s2distance_target.h"
-#include "s2/s2edge_distances.h"
-#include "s2/s2shape_index.h"
+#include "_fp_contract_off.h"
+#include "core/s1angle.h"
+#include "core/s1chord_angle.h"
+#include "object/s2cell.h"
+#include "query/s2distance_target.h"
+#include "core/s2edge_distances.h"
+#include "shape/s2shape_index.h"
 
 class S2FurthestEdgeQuery;
 

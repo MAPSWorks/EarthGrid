@@ -15,14 +15,14 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2shapeutil_build_polygon_boundaries.h"
+#include "shape/s2shapeutil_build_polygon_boundaries.h"
 
-#include "s2/third_party/absl/memory/memory.h"
-#include "s2/mutable_s2shape_index.h"
-#include "s2/s2contains_point_query.h"
-#include "s2/s2shape_index.h"
-#include "s2/s2shapeutil_contains_brute_force.h"
-#include "s2/util/gtl/btree_map.h"
+#include "third_party/absl/memory/memory.h"
+#include "index/mutable_s2shape_index.h"
+#include "query/s2contains_point_query.h"
+#include "shape/s2shape_index.h"
+#include "shape/s2shapeutil_contains_brute_force.h"
+#include "util/gtl/btree_map.h"
 
 using absl::WrapUnique;
 using std::vector;

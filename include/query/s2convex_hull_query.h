@@ -21,12 +21,12 @@
 #include <memory>
 #include <vector>
 
-#include "s2/_fp_contract_off.h"
-#include "s2/s2cap.h"
-#include "s2/s2latlng_rect.h"
-#include "s2/s2loop.h"
-#include "s2/s2polygon.h"
-#include "s2/s2polyline.h"
+#include "_fp_contract_off.h"
+#include "object/s2cap.h"
+#include "object/s2latlng_rect.h"
+#include "object/s2loop.h"
+#include "object/s2polygon.h"
+#include "object/s2polyline.h"
 
 // S2ConvexHullQuery builds the convex hull of any collection of points,
 // polylines, loops, and polygons.  It returns a single convex loop.

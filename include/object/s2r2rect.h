@@ -20,13 +20,13 @@
 
 #include <iosfwd>
 
-#include "s2/base/logging.h"
-#include "s2/_fp_contract_off.h"
-#include "s2/r1interval.h"
-#include "s2/r2.h"
-#include "s2/r2rect.h"
-#include "s2/s1angle.h"
-#include "s2/s2region.h"
+#include "base/logging.h"
+#include "_fp_contract_off.h"
+#include "core/r1interval.h"
+#include "core/r2.h"
+#include "core/r2rect.h"
+#include "core/s1angle.h"
+#include "object/s2region.h"
 
 class Decoder;
 class Encoder;

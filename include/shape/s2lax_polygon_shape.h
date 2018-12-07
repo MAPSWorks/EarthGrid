@@ -21,11 +21,11 @@
 #include <memory>
 #include <vector>
 
-#include "s2/third_party/absl/types/span.h"
-#include "s2/encoded_uint_vector.h"
-#include "s2/encoded_s2point_vector.h"
-#include "s2/s2polygon.h"
-#include "s2/s2shape.h"
+#include "third_party/absl/types/span.h"
+#include "encode/encoded_uint_vector.h"
+#include "encode/encoded_s2point_vector.h"
+#include "object/s2polygon.h"
+#include "shape/s2shape.h"
 
 // S2LaxPolygonShape represents a region defined by a collection of zero or
 // more closed loops.  The interior is the region to the left of all loops.

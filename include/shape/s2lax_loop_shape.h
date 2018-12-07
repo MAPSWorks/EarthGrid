@@ -36,8 +36,8 @@
 #include <memory>
 #include <vector>
 
-#include "s2/s2loop.h"
-#include "s2/s2shape.h"
+#include "object/s2loop.h"
+#include "shape/s2shape.h"
 
 // S2LaxLoopShape represents a closed loop of edges surrounding an interior
 // region.  It is similar to S2Loop::Shape except that this class allows

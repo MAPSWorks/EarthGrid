@@ -18,9 +18,9 @@
 #ifndef S2_S2SHAPE_H_
 #define S2_S2SHAPE_H_
 
-#include "s2/base/integral_types.h"
-#include "s2/s2point.h"
-#include "s2/s2pointutil.h"
+#include "base/integral_types.h"
+#include "core/s2point.h"
+#include "core/s2pointutil.h"
 
 // The purpose of S2Shape is to represent polygonal geometry in a flexible
 // way.  It is organized as a collection of edges that optionally defines an

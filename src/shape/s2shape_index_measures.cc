@@ -15,9 +15,9 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2shape_index_measures.h"
+#include "shape/s2shape_index_measures.h"
 
-#include "s2/s2shape_measures.h"
+#include "shape/s2shape_measures.h"
 
 namespace S2 {
 

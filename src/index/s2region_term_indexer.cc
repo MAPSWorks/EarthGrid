@@ -72,16 +72,16 @@
 //   "covering term" or an "ancestor term".  One choice minimizes query size
 //   while the other minimizes index size.
 
-#include "s2/s2region_term_indexer.h"
+#include "index/s2region_term_indexer.h"
 
 #include <cctype>
 
-#include "s2/base/logging.h"
-#include "s2/s1angle.h"
-#include "s2/s2cap.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2region.h"
-#include "s2/third_party/absl/strings/str_cat.h"
+#include "base/logging.h"
+#include "core/s1angle.h"
+#include "object/s2cap.h"
+#include "core/s2cell_id.h"
+#include "object/s2region.h"
+#include "third_party/absl/strings/str_cat.h"
 
 using absl::string_view;
 using std::vector;

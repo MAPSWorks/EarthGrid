@@ -23,10 +23,10 @@
 #include <iterator>
 #include <utility>
 #include <vector>
-#include "s2/base/integral_types.h"
-#include "s2/id_set_lexicon.h"
-#include "s2/s2builder.h"
-#include "s2/s2error.h"
+#include "base/integral_types.h"
+#include "core/id_set_lexicon.h"
+#include "builder/s2builder.h"
+#include "core/s2error.h"
 
 // An S2Builder::Graph represents a collection of snapped edges that is passed
 // to a Layer for assembly.  (Example layers include polygons, polylines, and

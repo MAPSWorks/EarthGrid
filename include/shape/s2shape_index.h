@@ -30,18 +30,18 @@
 #include <utility>
 #include <vector>
 
-#include "s2/base/integral_types.h"
-#include "s2/base/logging.h"
-#include "s2/base/mutex.h"
-#include "s2/base/spinlock.h"
-#include "s2/_fp_contract_off.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2pointutil.h"
-#include "s2/s2shape.h"
-#include "s2/third_party/absl/base/macros.h"
-#include "s2/third_party/absl/base/thread_annotations.h"
-#include "s2/third_party/absl/memory/memory.h"
-#include "s2/util/gtl/compact_array.h"
+#include "base/integral_types.h"
+#include "base/logging.h"
+#include "base/mutex.h"
+#include "base/spinlock.h"
+#include "_fp_contract_off.h"
+#include "core/s2cell_id.h"
+#include "core/s2pointutil.h"
+#include "shape/s2shape.h"
+#include "third_party/absl/base/macros.h"
+#include "third_party/absl/base/thread_annotations.h"
+#include "third_party/absl/memory/memory.h"
+#include "util/gtl/compact_array.h"
 
 class R1Interval;
 class S2PaddedCell;

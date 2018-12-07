@@ -15,16 +15,16 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2latlng_rect_bounder.h"
+#include "object/s2latlng_rect_bounder.h"
 
 #include <cfloat>
 #include <cmath>
 
-#include "s2/base/logging.h"
-#include "s2/r1interval.h"
-#include "s2/s1chord_angle.h"
-#include "s2/s1interval.h"
-#include "s2/s2pointutil.h"
+#include "base/logging.h"
+#include "core/r1interval.h"
+#include "core/s1chord_angle.h"
+#include "core/s1interval.h"
+#include "core/s2pointutil.h"
 
 using std::fabs;
 using std::max;

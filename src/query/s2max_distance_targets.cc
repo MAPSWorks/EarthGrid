@@ -13,17 +13,17 @@
 // limitations under the License.
 //
 
-#include "s2/s2max_distance_targets.h"
+#include "query/s2max_distance_targets.h"
 
 #include <memory>
-#include "s2/third_party/absl/memory/memory.h"
-#include "s2/s1angle.h"
-#include "s2/s2cap.h"
-#include "s2/s2cell.h"
-#include "s2/s2edge_distances.h"
-#include "s2/s2furthest_edge_query.h"
-#include "s2/s2shape_index_region.h"
-#include "s2/s2text_format.h"
+#include "third_party/absl/memory/memory.h"
+#include "core/s1angle.h"
+#include "object/s2cap.h"
+#include "object/s2cell.h"
+#include "core/s2edge_distances.h"
+#include "query/s2furthest_edge_query.h"
+#include "object/s2shape_index_region.h"
+#include "encode/s2text_format.h"
 
 //////////////////   Point Target   ////////////////////
 

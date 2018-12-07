@@ -22,11 +22,11 @@
 #include <utility>
 #include <vector>
 
-#include "s2/third_party/absl/base/macros.h"
-#include "s2/_fp_contract_off.h"
-#include "s2/s2cell.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2cell_union.h"
+#include "third_party/absl/base/macros.h"
+#include "_fp_contract_off.h"
+#include "object/s2cell.h"
+#include "core/s2cell_id.h"
+#include "object/s2cell_union.h"
 
 class S2Region;
 

@@ -22,9 +22,9 @@
 #ifndef S2_S2SHAPE_INDEX_MEASURES_H_
 #define S2_S2SHAPE_INDEX_MEASURES_H_
 
-#include "s2/s1angle.h"
-#include "s2/s2point.h"
-#include "s2/s2shape_index.h"
+#include "core/s1angle.h"
+#include "core/s2point.h"
+#include "shape/s2shape_index.h"
 
 namespace S2 {
 

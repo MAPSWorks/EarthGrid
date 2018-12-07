@@ -20,9 +20,9 @@
 
 #include <memory>
 #include <string>
-#include "s2/third_party/absl/strings/string_view.h"
-#include "s2/third_party/absl/types/span.h"
-#include "s2/encoded_uint_vector.h"
+#include "third_party/absl/strings/string_view.h"
+#include "third_party/absl/types/span.h"
+#include "encode/encoded_uint_vector.h"
 
 namespace s2coding {
 

@@ -15,20 +15,20 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2builderutil_find_polygon_degeneracies.h"
+#include "builder/s2builderutil_find_polygon_degeneracies.h"
 
 #include <cstdlib>
 #include <utility>
 #include <vector>
 
-#include "s2/third_party/absl/memory/memory.h"
-#include "s2/mutable_s2shape_index.h"
-#include "s2/s2builder_graph.h"
-#include "s2/s2contains_vertex_query.h"
-#include "s2/s2crossing_edge_query.h"
-#include "s2/s2edge_crosser.h"
-#include "s2/s2pointutil.h"
-#include "s2/s2predicates.h"
+#include "third_party/absl/memory/memory.h"
+#include "index/mutable_s2shape_index.h"
+#include "builder/s2builder_graph.h"
+#include "query/s2contains_vertex_query.h"
+#include "query/s2crossing_edge_query.h"
+#include "core/s2edge_crosser.h"
+#include "core/s2pointutil.h"
+#include "core/s2predicates.h"
 
 using absl::make_unique;
 using std::make_pair;

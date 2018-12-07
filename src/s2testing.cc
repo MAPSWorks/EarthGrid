@@ -15,7 +15,7 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "core/s2testing.h"
+#include "s2testing.h"
 
 #include <algorithm>
 #include <cmath>
@@ -41,7 +41,7 @@
 #include "object/s2polygon.h"
 #include "object/s2polyline.h"
 #include "object/s2region.h"
-#include "core/s2text_format.h"
+#include "encode/s2text_format.h"
 #include "strings/serialize.h"
 #include "third_party/absl/memory/memory.h"
 #include "third_party/absl/strings/str_split.h"

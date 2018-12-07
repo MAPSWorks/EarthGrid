@@ -21,22 +21,22 @@
 #include <memory>
 #include <vector>
 
-#include "s2/base/logging.h"
-#include "s2/third_party/absl/container/inlined_vector.h"
-#include "s2/_fp_contract_off.h"
-#include "s2/s1angle.h"
-#include "s2/s1chord_angle.h"
-#include "s2/s2cap.h"
-#include "s2/s2cell.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2cell_union.h"
-#include "s2/s2distance_target.h"
-#include "s2/s2region_coverer.h"
-#include "s2/s2shape_index.h"
-#include "s2/s2shapeutil_count_edges.h"
-#include "s2/s2shapeutil_shape_edge_id.h"
-#include "s2/util/gtl/btree_set.h"
-#include "s2/util/gtl/dense_hash_set.h"
+#include "base/logging.h"
+#include "third_party/absl/container/inlined_vector.h"
+#include "_fp_contract_off.h"
+#include "core/s1angle.h"
+#include "core/s1chord_angle.h"
+#include "object/s2cap.h"
+#include "object/s2cell.h"
+#include "core/s2cell_id.h"
+#include "object/s2cell_union.h"
+#include "query/s2distance_target.h"
+#include "object/s2region_coverer.h"
+#include "shape/s2shape_index.h"
+#include "shape/s2shapeutil_count_edges.h"
+#include "shape/s2shapeutil_shape_edge_id.h"
+#include "util/gtl/btree_set.h"
+#include "util/gtl/dense_hash_set.h"
 
 // S2ClosestEdgeQueryBase is a templatized class for finding the closest
 // edge(s) between two geometries.  It is not intended to be used directly,

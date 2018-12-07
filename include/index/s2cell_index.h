@@ -19,10 +19,10 @@
 #define S2_S2CELL_INDEX_H_
 
 #include <vector>
-#include "s2/base/integral_types.h"
-#include "s2/base/logging.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2cell_union.h"
+#include "base/integral_types.h"
+#include "base/logging.h"
+#include "core/s2cell_id.h"
+#include "object/s2cell_union.h"
 
 // S2CellIndex stores a collection of (cell_id, label) pairs.  The S2CellIds
 // may be overlapping or contain duplicate values.  For example, an

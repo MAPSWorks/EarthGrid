@@ -23,18 +23,18 @@
 #include <type_traits>
 #include <vector>
 
-#include "s2/base/logging.h"
-#include "s2/third_party/absl/base/macros.h"
-#include "s2/third_party/absl/container/inlined_vector.h"
-#include "s2/_fp_contract_off.h"
-#include "s2/s1angle.h"
-#include "s2/s1chord_angle.h"
-#include "s2/s2cell.h"
-#include "s2/s2cell_id.h"
-#include "s2/s2closest_edge_query_base.h"
-#include "s2/s2edge_distances.h"
-#include "s2/s2min_distance_targets.h"
-#include "s2/s2shape_index.h"
+#include "base/logging.h"
+#include "third_party/absl/base/macros.h"
+#include "third_party/absl/container/inlined_vector.h"
+#include "_fp_contract_off.h"
+#include "core/s1angle.h"
+#include "core/s1chord_angle.h"
+#include "object/s2cell.h"
+#include "core/s2cell_id.h"
+#include "query/s2closest_edge_query_base.h"
+#include "core/s2edge_distances.h"
+#include "query/s2min_distance_targets.h"
+#include "shape/s2shape_index.h"
 
 // S2ClosestEdgeQuery is a helper class for finding the closest edge(s) to a
 // given point, edge, S2Cell, or geometry collection.  For example, given a

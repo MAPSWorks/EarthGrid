@@ -38,10 +38,10 @@
 
 #include <functional>
 #include <memory>
-#include "s2/util/coding/coder.h"
-#include "s2/encoded_string_vector.h"
-#include "s2/s2shape.h"
-#include "s2/s2shape_index.h"
+#include "util/coding/coder.h"
+#include "encode/encoded_string_vector.h"
+#include "shape/s2shape.h"
+#include "shape/s2shape_index.h"
 
 namespace s2shapeutil {
 

@@ -15,11 +15,11 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2lax_polyline_shape.h"
+#include "shape/s2lax_polyline_shape.h"
 
 #include <algorithm>
-#include "s2/base/logging.h"
-#include "s2/s2polyline.h"
+#include "base/logging.h"
+#include "object/s2polyline.h"
 
 using absl::make_unique;
 using absl::MakeSpan;

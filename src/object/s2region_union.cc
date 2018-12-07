@@ -15,10 +15,10 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2region_union.h"
+#include "object/s2region_union.h"
 
-#include "s2/s2cap.h"
-#include "s2/s2latlng_rect.h"
+#include "object/s2cap.h"
+#include "object/s2latlng_rect.h"
 
 using std::vector;
 

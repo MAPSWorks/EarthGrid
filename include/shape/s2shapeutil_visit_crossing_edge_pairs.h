@@ -19,9 +19,9 @@
 #define S2_S2SHAPEUTIL_VISIT_CROSSING_EDGE_PAIRS_H_
 
 #include <functional>
-#include "s2/s2crossing_edge_query.h"
-#include "s2/s2shape_index.h"
-#include "s2/s2shapeutil_shape_edge.h"
+#include "query/s2crossing_edge_query.h"
+#include "shape/s2shape_index.h"
+#include "shape/s2shapeutil_shape_edge.h"
 
 class S2Error;
 

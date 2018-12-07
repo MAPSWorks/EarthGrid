@@ -15,26 +15,26 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2cell.h"
+#include "object/s2cell.h"
 
 #include <algorithm>
 #include <cfloat>
 #include <cmath>
 #include <iomanip>
 
-#include "s2/base/logging.h"
-#include "s2/r1interval.h"
-#include "s2/r2.h"
-#include "s2/s1chord_angle.h"
-#include "s2/s1interval.h"
-#include "s2/s2cap.h"
-#include "s2/s2coords.h"
-#include "s2/s2edge_crosser.h"
-#include "s2/s2edge_distances.h"
-#include "s2/s2latlng.h"
-#include "s2/s2latlng_rect.h"
-#include "s2/s2measures.h"
-#include "s2/s2metrics.h"
+#include "base/logging.h"
+#include "core/r1interval.h"
+#include "core/r2.h"
+#include "core/s1chord_angle.h"
+#include "core/s1interval.h"
+#include "object/s2cap.h"
+#include "core/s2coords.h"
+#include "core/s2edge_crosser.h"
+#include "core/s2edge_distances.h"
+#include "core/s2latlng.h"
+#include "object/s2latlng_rect.h"
+#include "core/s2measures.h"
+#include "core/s2metrics.h"
 
 using S2::internal::kPosToIJ;
 using S2::internal::kPosToOrientation;

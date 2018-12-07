@@ -15,7 +15,7 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2closest_point_query.h"
+#include "query/s2closest_point_query.h"
 
 void S2ClosestPointQueryOptions::set_conservative_max_distance(
     S1ChordAngle max_distance) {

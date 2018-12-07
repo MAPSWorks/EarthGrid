@@ -21,10 +21,10 @@
 #include <memory>
 #include <utility>
 #include <vector>
-#include "s2/s2builder.h"
-#include "s2/s2builder_graph.h"
-#include "s2/s2builder_layer.h"
-#include "s2/value_lexicon.h"
+#include "builder/s2builder.h"
+#include "builder/s2builder_graph.h"
+#include "builder/s2builder_layer.h"
+#include "core/value_lexicon.h"
 
 // This class implements boolean operations (intersection, union, difference,
 // and symmetric difference) for regions whose boundaries are defined by

@@ -21,15 +21,15 @@
 #include <type_traits>
 #include <vector>
 
-#include "s2/third_party/absl/base/macros.h"
-#include "s2/third_party/absl/container/inlined_vector.h"
-#include "s2/_fp_contract_off.h"
-#include "s2/r2.h"
-#include "s2/r2rect.h"
-#include "s2/s2padded_cell.h"
-#include "s2/s2shape_index.h"
-#include "s2/s2shapeutil_shape_edge.h"
-#include "s2/s2shapeutil_shape_edge_id.h"
+#include "third_party/absl/base/macros.h"
+#include "third_party/absl/container/inlined_vector.h"
+#include "_fp_contract_off.h"
+#include "core/r2.h"
+#include "core/r2rect.h"
+#include "core/s2padded_cell.h"
+#include "shape/s2shape_index.h"
+#include "shape/s2shapeutil_shape_edge.h"
+#include "shape/s2shapeutil_shape_edge_id.h"
 
 // A parameter that controls the reporting of edge intersections.
 //

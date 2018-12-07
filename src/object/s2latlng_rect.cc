@@ -15,21 +15,21 @@
 
 // Author: ericv@google.com (Eric Veach)
 
-#include "s2/s2latlng_rect.h"
+#include "object/s2latlng_rect.h"
 
 #include <algorithm>
 #include <cmath>
 #include <iosfwd>
 #include <iostream>
 
-#include "s2/base/logging.h"
-#include "s2/util/coding/coder.h"
-#include "s2/s2cap.h"
-#include "s2/s2cell.h"
-#include "s2/s2debug.h"
-#include "s2/s2edge_crossings.h"
-#include "s2/s2edge_distances.h"
-#include "s2/s2pointutil.h"
+#include "base/logging.h"
+#include "util/coding/coder.h"
+#include "object/s2cap.h"
+#include "object/s2cell.h"
+#include "core/s2debug.h"
+#include "core/s2edge_crossings.h"
+#include "core/s2edge_distances.h"
+#include "core/s2pointutil.h"
 
 using std::fabs;
 using std::max;

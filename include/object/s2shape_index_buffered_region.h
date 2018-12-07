@@ -19,13 +19,13 @@
 #define S2_S2SHAPE_INDEX_BUFFERED_REGION_H_
 
 #include <vector>
-#include "s2/s2cap.h"
-#include "s2/s2cell.h"
-#include "s2/s2cell_union.h"
-#include "s2/s2closest_edge_query.h"
-#include "s2/s2latlng_rect.h"
-#include "s2/s2region.h"
-#include "s2/s2shape_index.h"
+#include "object/s2cap.h"
+#include "object/s2cell.h"
+#include "object/s2cell_union.h"
+#include "query/s2closest_edge_query.h"
+#include "object/s2latlng_rect.h"
+#include "object/s2region.h"
+#include "shape/s2shape_index.h"
 
 // This class provides a way to expand an arbitrary collection of geometry by
 // a fixed radius (an operation variously known as "buffering", "offsetting",
